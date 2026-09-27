@@ -47,15 +47,18 @@
  },
  "rotchan_ro05": {
   "invariant": 0.990562,
-  "flow_state": 0.294918
+  "flow_state": 0.294918,
+  "rotation_limited": 0.510409
  },
  "rotchan_ro15": {
   "invariant": 0.964392,
-  "flow_state": 0.375235
+  "flow_state": 0.375235,
+  "rotation_limited": 0.475008
  },
  "rotchan_ro20": {
   "invariant": 0.959531,
-  "flow_state": 0.453915
+  "flow_state": 0.453915,
+  "rotation_limited": 0.515811
  },
  "naca0012_a015_225x65": {
   "invariant": 1.129956,
@@ -87,5 +90,5 @@
   "flow_state": 1.020912,
   "rotation_limited": 1.020912
  },
- "_note": "Case errors relative to SST as reported in the paper: development cases from the search records (invariant: final equation of the invariant search; flow-state: selected equation of the flow-state search), holdout cases from the holdout verification (forge-v3-verify-002), and rotation-limited values from its calibration records. Away from frame rotation the rotation-limited correction equals the flow-state correction. The airfoil at 10 degrees is a preservation check without a case error in the paper, and the rotation-limited correction was not reported at Ro = 0.05, 0.15 and 0.20."
+ "_note": "Case errors relative to SST as reported in the paper: development cases from the search records (invariant: final equation of the invariant search; flow-state: selected equation of the flow-state search), holdout cases from the holdout verification (forge-v3-verify-002), rotation-limited values from its calibration records and, at Ro = 0.05, 0.15 and 0.20, from its re-verification (forge-v3-verify-003-r1). Away from frame rotation the rotation-limited correction equals the flow-state correction. The airfoil at 10 degrees is a preservation check without a case error in the paper."
 }

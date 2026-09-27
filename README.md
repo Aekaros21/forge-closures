@@ -105,7 +105,7 @@ workstation. The domain decomposition then differs from the paper's, so the erro
 The table lists the case errors reproduced with `reproduce/run_cases.py` on a laptop (OpenFOAM v2312 on
 Pop!_OS 24.04, which is based on Ubuntu 24.04) next to the paper's values, which were computed on a cluster
 (`reproduce/expected.json`). The development values are those behind the family averages of Tables II and IV of
-the paper, the holdout values those of Table V, and the rotation-limited values those of Table VI.
+the paper, the holdout values those of Table V, and the rotation-limited values those of Sec. III B 3 and Table VI.
 
 | Case | Invariant | Flow-state | Rotation-limited |
 |---|---|---|---|
@@ -113,9 +113,9 @@ the paper, the holdout values those of Table V, and the rotation-limited values 
 | `rotchan_ro10` | 0.9750 / 0.9750 | 0.3399 / 0.3399 | 0.4744 / 0.4744 |
 | `rotchan_ro50` | 0.9422 / 0.9422 | 0.5987 / 0.5987 | 0.6093 / 0.6093 |
 | `rotchan_ro01` | 0.9998 / 0.9998 | 1.6322 / 1.6325 | 0.5804 / 0.5804 |
-| `rotchan_ro05` | 0.9906 / 0.9906 | 0.2949 / 0.2949 | 0.5104 / — |
-| `rotchan_ro15` | 0.9644 / 0.9644 | 0.3752 / 0.3752 | 0.4750 / — |
-| `rotchan_ro20` | 0.9595 / 0.9595 | 0.4539 / 0.4539 | 0.5158 / — |
+| `rotchan_ro05` | 0.9906 / 0.9906 | 0.2949 / 0.2949 | 0.5104 / 0.5104 |
+| `rotchan_ro15` | 0.9644 / 0.9644 | 0.3752 / 0.3752 | 0.4750 / 0.4750 |
+| `rotchan_ro20` | 0.9595 / 0.9595 | 0.4539 / 0.4539 | 0.5158 / 0.5158 |
 | `squareDuct_Re_2000` | 0.6123 / 0.6123 | 0.6109 / 0.6109 |  |
 | `squareDuct_Re_3200` | 0.5860 / 0.5860 | 0.5834 / 0.5834 |  |
 | `nasa_hump_fine` | 0.8960 / 0.8960 | 0.7584 / 0.7584 |  |
@@ -124,12 +124,12 @@ the paper, the holdout values those of Table V, and the rotation-limited values 
 | `naca0012_a010_225x65` | 1.0299 / — | 1.0107 / — |  |
 | `naca0012_a015_225x65` | 1.1303 / 1.1300 | 1.1560 / 1.1560 |  |
 
-Each entry is the reproduced case error / the paper's value; 30 values are compared, and the largest difference is
+Each entry is the reproduced case error / the paper's value; 33 values are compared, and the largest difference is
 0.0004. The rotation-limited correction is listed for the rotating channels only, since elsewhere it equals the
-flow-state correction. The paper gives no case error for the rotation-limited correction at Ro = 0.05, 0.15 and
-0.20, nor for the airfoil at 10°, a preservation check: there the lift and drag and their errors had to stay within
-2% of SST, with floors of 0.001 in lift and 10⁻⁵ in drag (Sec. II A of the paper), which they do. The invariant
-correction, for example, raises the lift error from 0.0144 to 0.0153, within its allowance of 0.0013.
+flow-state correction. The paper gives no case error for the airfoil at 10°, a preservation check: there the lift
+and drag and their errors had to stay within 2% of SST, with floors of 0.001 in lift and 10⁻⁵ in drag (Sec. II A of
+the paper), which they do. The invariant correction, for example, raises the lift error from 0.0144 to 0.0153,
+within its allowance of 0.0013.
 
 Differences of up to 4×10⁻⁴ come from floating-point differences between machines. They are largest on the
 airfoil at 15° and on the rotating channel at Ro = 0.01, where the error ratios are large. The paper's evaluator
