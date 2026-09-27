@@ -1,0 +1,38 @@
+FoamFile { version 2.0; format ascii; class dictionary; object turbulenceProperties; }
+simulationType RAS;
+RAS
+{
+    RASModel kOmegaSSTBasis;
+    turbulence on;
+    printCoeffs off;
+    kOmegaSSTBasisCoeffs
+    {
+        coupledStressBoundary true;
+        mode            expressions;
+        bDelta
+        {
+            terms
+            (
+            (T1 "((((((-0.95*(Ret/(3.44+Ret)))*exp(((-6.35)*max((PoE-1.0),0.0))))*tanh(((6.35*(I1+I2))/max((1.0/15.75),(I1+abs(I2))))))*tanh(((15.75*max((abs((I1+I2))-((I1+abs(I2))/6.35)),0.0))/max((1.0/15.75),(I1+abs(I2))))))*(abs(I5)/(abs(I5)+max((1.0/(15.75*15.75)),(I1*abs(I2))))))/(max(1.0,((6.35+abs(-0.95))*sqrt(I1)))*(1.0+((6.35*max((I1+I2),0.0))/max((1.0/15.75),(I1+abs(I2)))))))")
+            (T2 "((((((-0.65*(1.0-F1))*(1.0-F1))*(Ret/(3.44+Ret)))*(max((PoE*(1.0-PoE)),0.0)/(1.0+abs(PoE))))*((2.0*sqrt(max((I1*abs(I2)),0.0)))/max((1.0/15.75),(I1+abs(I2)))))/max(1.0,(((1.47*(I1+abs(I2)))+(abs(-3.32)*abs((I1+I2))))+((((((2.0*abs(-0.65))*(1.0-F1))*(1.0-F1))*(Ret/(3.44+Ret)))*(max((PoE*(1.0-PoE)),0.0)/(1.0+abs(PoE))))*sqrt(max((I1*abs(I2)),0.0))))))")
+            (T3 "(((Ret/(3.44+Ret))*(((-3.32*F1)*exp(((-6.35)*abs((PoE-1.0)))))-((((-0.65*(1.0-F1))*(1.0-F1))*(max((PoE*(1.0-PoE)),0.0)/(1.0+abs(PoE))))*((2.0*sqrt(max((I1*abs(I2)),0.0)))/max((1.0/15.75),(I1+abs(I2)))))))/max(1.0,(((1.47*(I1+abs(I2)))+(abs(-3.32)*abs((I1+I2))))+((((((2.0*abs(-0.65))*(1.0-F1))*(1.0-F1))*(Ret/(3.44+Ret)))*(max((PoE*(1.0-PoE)),0.0)/(1.0+abs(PoE))))*sqrt(max((I1*abs(I2)),0.0))))))")
+            (T4 "(((Ret/(3.44+Ret))*((((--3.32)*F1)*exp(((-6.35)*abs((PoE-1.0)))))+((((-0.65*(1.0-F1))*(1.0-F1))*(max((PoE*(1.0-PoE)),0.0)/(1.0+abs(PoE))))*((2.0*sqrt(max((I1*abs(I2)),0.0)))/max((1.0/15.75),(I1+abs(I2)))))))/max(1.0,(((1.47*(I1+abs(I2)))+(abs(-3.32)*abs((I1+I2))))+((((((2.0*abs(-0.65))*(1.0-F1))*(1.0-F1))*(Ret/(3.44+Ret)))*(max((PoE*(1.0-PoE)),0.0)/(1.0+abs(PoE))))*sqrt(max((I1*abs(I2)),0.0))))))")
+            );
+        }
+        rSource
+        {
+            terms
+            (
+            (T1 "(((((0.38*(1.0-F1))*(((max((PoE-1.0),0.0)/max(1.0,PoE))*(tanh(((15.75*abs((I1+I2)))/max((1.0/15.75),(I1+abs(I2)))))+((((1.0-F1)*(Ret/(3.44+Ret)))*(1.0-tanh(((15.75*abs((I1+I2)))/max((1.0/15.75),(I1+abs(I2)))))))*tanh((15.75*sqrt(max((I1*abs(I2)),0.0)))))))+((((((1.0-F1)*(Ret/(3.44+Ret)))*(max((PoE*(1.0-PoE)),0.0)/(1.0+abs(PoE))))*(1.0-tanh(((15.75*abs((I1+I2)))/max((1.0/15.75),(I1+abs(I2)))))))*tanh((15.75*sqrt(max((I1*abs(I2)),0.0)))))/(1.0+(6.35*(I1+abs(I2)))))))-((-0.65*(Ret/(3.44+Ret)))*(((((1.0-F1)*(1.0-F1))*((max((PoE*(1.0-PoE)),0.0)/(1.0+abs(PoE)))+((exp(((-6.35)*abs((PoE-1.0))))*tanh((15.75*sqrt(max((I1*abs(I2)),0.0)))))/(1.0+(6.35*(I1+abs(I2)))))))*tanh(((6.35*max((I1+I2),0.0))/max((1.0/15.75),(I1+abs(I2))))))+(((F1*(max((PoE*(1.0-PoE)),0.0)/(1.0+abs(PoE))))*((2.0*sqrt(max((I1*abs(I2)),0.0)))/max((1.0/15.75),(I1+abs(I2)))))*tanh(((15.75*max(((I1+I2)-((I1+abs(I2))/15.75)),0.0))/max((1.0/15.75),(I1+abs(I2)))))))))/max(1.0,(((15.75+abs(0.38))+abs(-0.65))*I1)))+(((((((((--0.95)*F1)*F1)*(Ret/(3.44+Ret)))*(max(PoE,0.0)/max(1.0,PoE)))*tanh(((15.75*max((((-I1)-I2)-((I1+abs(I2))/15.75)),0.0))/max((1.0/15.75),(I1+abs(I2))))))*(abs(I5)/(abs(I5)+max((1.0/(15.75*15.75)),(I1*abs(I2))))))*((((15.75*I1)/(1.0+(6.35*abs(I2))))-max(PoE,0.0))/((1.0+((15.75*I1)/(1.0+(6.35*abs(I2)))))+abs(PoE))))/max(1.0,((15.75+abs(-0.95))*I1))))")
+            (T6 "(((((((-0.65*(1.0-F1))*(1.0-F1))*(Ret/(3.44+Ret)))*(max((1.0-PoE),0.0)/(1.0+abs(PoE))))*(I1/max((1.0/15.75),(I1+abs(I2)))))*(1.0-tanh(((6.35*max((I1+I2),0.0))/max((1.0/15.75),(I1+abs(I2)))))))/((1.0+(max(1.0,(6.35+abs(-0.65)))*abs(I2)))*max(1.0,(((15.75+abs(0.38))+abs(-0.65))*I1))))")
+            );
+        }
+        gMax            10.0;
+        rMaxFactor      5.0;
+        bDeltaRelax     0.5;
+        rampIterations  200;
+        nonlinearProduction on;
+        realizabilityClip   on;
+        a1Expr          "";
+    }
+}

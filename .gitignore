@@ -1,0 +1,19 @@
+# cases written by reproduce/make_case.py and the hash-named library copies
+runs/
+build/
+# OpenFOAM build products
+closures/kOmegaSSTBasis/Make/linux64*/
+lnInclude/
+# data downloaded by data/fetch_data.py or placed by hand (not redistributable here)
+data/mcconkey/
+data/assets/references/duct/
+data/assets/references/rotation/
+data/assets/references/ahmed/
+data/assets/references/diffuser3d/
+data/assets/references/wingbody/
+# meshes built by reproduce/build_ahmed_mesh.py
+data/assets/meshes/
+# Python
+__pycache__/
+*.pyc
+.venv/

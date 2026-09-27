@@ -1,0 +1,36 @@
+FoamFile { version 2.0; format ascii; class dictionary; object turbulenceProperties; }
+simulationType RAS;
+RAS
+{
+    RASModel kOmegaSSTBasis;
+    turbulence on;
+    printCoeffs off;
+    kOmegaSSTBasisCoeffs
+    {
+        coupledStressBoundary true;
+        mode            expressions;
+        bDelta
+        {
+            terms
+            (
+            (T1 "((((((1.0-(Rf/((1.0-(F1*Gk))+Rf)))*(Ret/(1.0+Ret)))*tanh((Rf/0.01)))*(((((88.0*88.0)*(((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))))*max((((Rw*Rf)*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))),0.0))/((1.0+((88.0*(((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))))*(1.0+(88.0*max((((Rw*Rf)*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))),0.0)))))*max(1.0,(4.6*(sqrt(I1)+abs((Rw*Rf)))))))-(tanh(((((((88.0*88.0)*(((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))))*max(((((-Rw)*Rf)*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))),0.0))*(1.0+((((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf)))*(1.0+(F1*Gk)))))*(1.0+(((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf)))))/(1.0+(88.0*(((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf)))))))/max(1.0,(4.6*sqrt(I1))))))/max(1.0,((4.6*(1.0+4.6))*I1)))+((((((((((tanh((((abs(0.54)*21.9938)*F1)*Gk))*0.54)*21.9938)*(1.0-F1))*(1.0-F1))*(Ret/(3.76452+Ret)))*(1.0-((1.0-((1.0-F1)*(Ret/(3.76452+Ret))))*(1.0-tanh(((21.9938*abs((I1+I2)))/max((1.0/21.9938),(I1+abs(I2)))))))))*tanh((21.9938*sqrt((I1*abs(I2))))))*max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0))*max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0))/((((sqrt(((1.0/(21.9938*21.9938))+(max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0)*max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0))))*(1.0+max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0)))*sqrt((1.0+max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0))))*((1.0+((1.33944*Gp)*Gp))+((21.9938*Gk)*Gk)))*max(1.0,((21.9938*(1.0+abs(0.54)))*I1)))))")
+            (T3 "((((-3.00284*F1)*(Ret/(3.76452+Ret)))*exp(((-4.6361)*abs((PoE-1.0)))))/max(1.0,(((1.0+abs(-3.00284))*(I1+abs(I2)))+(abs(-3.00284)*abs((I1+I2))))))")
+            (T4 "(((((--3.00284)*F1)*(Ret/(3.76452+Ret)))*exp(((-4.6361)*abs((PoE-1.0)))))/max(1.0,(((1.0+abs(-3.00284))*(I1+abs(I2)))+(abs(-3.00284)*abs((I1+I2))))))")
+            );
+        }
+        rSource
+        {
+            terms
+            (
+            (T1 "((((((((((((1.0+tanh((((abs(0.54)*21.9938)*F1)*Gk)))*0.54)*21.9938)*(1.0-F1))*(1.0-F1))*(Ret/(3.76452+Ret)))*(1.0-((1.0-((1.0-F1)*(Ret/(3.76452+Ret))))*(1.0-tanh(((21.9938*abs((I1+I2)))/max((1.0/21.9938),(I1+abs(I2)))))))))*tanh((21.9938*sqrt((I1*abs(I2))))))*max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0))*max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0))/((((sqrt(((1.0/(21.9938*21.9938))+(max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0)*max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0))))*(1.0+max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0)))*sqrt((1.0+max(((PoE-1.0)-((1.0+(Gk*(1.0-tanh((Ksn/sqrt(I1))))))/4.6361)),0.0))))*((1.0+((1.33944*Gp)*Gp))+((21.9938*Gk)*Gk)))*max(1.0,((21.9938*(1.0+abs(0.54)))*I1))))-(((((Rf/((1.0-(F1*Gk))+Rf))*(Ret/(1.0+Ret)))*tanh((Rf/0.01)))*(((((88.0*88.0)*(((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))))*max((((Rw*Rf)*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))),0.0))/((1.0+((88.0*(((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))))*(1.0+(88.0*max((((Rw*Rf)*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))),0.0)))))*max(1.0,(4.6*(sqrt(I1)+abs((Rw*Rf)))))))-(tanh(((((((88.0*88.0)*(((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))))*max(((((-Rw)*Rf)*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf))),0.0))*(1.0+((((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf)))*(1.0+(F1*Gk)))))*(1.0+(((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf)))))/(1.0+(88.0*(((sqrt(I1)+(Rw*Rf))*(sqrt(I1)+(Rw*Rf)))/(I1+(((Rw*Rw)*Rf)*Rf)))))))/max(1.0,(4.6*sqrt(I1))))))/max(1.0,((4.6*(1.0+4.6))*I1))))")
+            );
+        }
+        gMax            10.0;
+        rMaxFactor      5.0;
+        bDeltaRelax     0.5;
+        rampIterations  200;
+        nonlinearProduction on;
+        realizabilityClip   on;
+        a1Expr          "";
+    }
+}

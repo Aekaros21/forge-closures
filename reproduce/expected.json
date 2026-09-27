@@ -1,0 +1,91 @@
+{
+ "squareDuct_Re_2000": {
+  "invariant": 0.612275,
+  "flow_state": 0.610906,
+  "rotation_limited": 0.610906
+ },
+ "rotchan_ro10": {
+  "invariant": 0.974995,
+  "flow_state": 0.339914,
+  "rotation_limited": 0.474382
+ },
+ "rotchan_ro00": {
+  "invariant": 1.000001,
+  "flow_state": 1.0,
+  "rotation_limited": 0.999992
+ },
+ "rotchan_ro50": {
+  "invariant": 0.942213,
+  "flow_state": 0.598693,
+  "rotation_limited": 0.609274
+ },
+ "tmr_plate_137x97": {
+  "invariant": 0.998291,
+  "flow_state": 1.000373,
+  "rotation_limited": 1.000373
+ },
+ "tmr_bump_177x81": {
+  "invariant": 0.995974,
+  "flow_state": 1.002746,
+  "rotation_limited": 1.002746
+ },
+ "naca0012_a010_225x65": {},
+ "nasa_hump_fine": {
+  "invariant": 0.896041,
+  "flow_state": 0.758394,
+  "rotation_limited": 0.758394
+ },
+ "squareDuct_Re_3200": {
+  "invariant": 0.58599,
+  "flow_state": 0.583373,
+  "rotation_limited": 0.583373
+ },
+ "rotchan_ro01": {
+  "invariant": 0.999822,
+  "flow_state": 1.632485,
+  "rotation_limited": 0.580392
+ },
+ "rotchan_ro05": {
+  "invariant": 0.990562,
+  "flow_state": 0.294918
+ },
+ "rotchan_ro15": {
+  "invariant": 0.964392,
+  "flow_state": 0.375235
+ },
+ "rotchan_ro20": {
+  "invariant": 0.959531,
+  "flow_state": 0.453915
+ },
+ "naca0012_a015_225x65": {
+  "invariant": 1.129956,
+  "flow_state": 1.156025,
+  "rotation_limited": 1.156025
+ },
+ "faith_hill": {
+  "invariant": 0.966001,
+  "flow_state": 0.800005,
+  "rotation_limited": 0.800005
+ },
+ "ahmed_25": {
+  "invariant": 1.000468,
+  "flow_state": 0.996143,
+  "rotation_limited": 0.996143
+ },
+ "ahmed_35": {
+  "invariant": 1.049794,
+  "flow_state": 1.168268,
+  "rotation_limited": 1.168268
+ },
+ "diffuser3d": {
+  "invariant": 0.89253,
+  "flow_state": 0.841397,
+  "rotation_limited": 0.841397
+ },
+ "wingbody": {
+  "invariant": 1.032496,
+  "flow_state": 1.020912,
+  "rotation_limited": 1.020912
+ },
+ "_note": "Case errors relative to SST as reported in the paper: development cases from the search records (invariant: final equation of the invariant search; flow-state: selected equation of the flow-state search), holdout cases from the holdout verification (forge-v3-verify-002), and rotation-limited values from its calibration records. Away from frame rotation the rotation-limited correction equals the flow-state correction. The airfoil at 10 degrees is a preservation check without a case error in the paper, and the rotation-limited correction was not reported at Ro = 0.05, 0.15 and 0.20."
+}

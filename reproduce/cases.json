@@ -1,0 +1,2389 @@
+{
+ "source": "forge-v3-verify-002 case definitions (config/verification_cases.json) and scoring contract (config/verification_contract.json), unchanged except the measured FAITH reattachment position (see the amendment in the faith_hill reference) and the location of the Ahmed-body mesh reports",
+ "cases": [
+  {
+   "id": "squareDuct_Re_2000",
+   "family": "square_duct",
+   "group": "pinelli_square_duct_lineage",
+   "geometry_lineage": "pinelli_square_duct_lineage",
+   "role": "calibration",
+   "exposure": "exposed",
+   "adapter": "duct",
+   "adapter_config": {
+    "case_id": "squareDuct_Re_2000",
+    "reference_npz": "data/mcconkey/cache/holdout_duct_squareDuct_Re_2000.npz",
+    "dns_case": "data/assets/references/duct/squareDuct_Re_2000",
+    "streamwise_cells": 1
+   },
+   "required": true,
+   "reference": {
+    "quality": "DNS_with_derived_wall_friction",
+    "paths": [
+     "data/mcconkey/cache/holdout_duct_squareDuct_Re_2000.npz",
+     "data/assets/references/duct/squareDuct_Re_2000/0/U",
+     "data/assets/references/duct/squareDuct_Re_2000/0/tau"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/0/U",
+     "sha256": "ecbe8793cd104cfea67f525a8e3d3f563ac506c8c22eabbb6ef3fbb62c1e44d0"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/0/tau",
+     "sha256": "433840552942ec84af4455779daefda1e41327c48cb2a8de2253058759faf277"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/constant/polyMesh/boundary",
+     "sha256": "9ccc55c650e832f0496f95c46075f27b84dac089bd6b5812530b6bae4b8602e4"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/constant/polyMesh/cellZones",
+     "sha256": "5943fab8d36ba1023b00f4bdc97330cfdd00480bca6a2c70996992d7ca7689d2"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/constant/polyMesh/faceZones",
+     "sha256": "e28523ae63b9422081eb4d1caf745e16d4706d940387300821a1ea79a7849bb4"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/constant/polyMesh/faces",
+     "sha256": "a4e603c61fcc0c5517044722cb3d3ad56caff15c16983a580fde241bb11e4b8d"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/constant/polyMesh/neighbour",
+     "sha256": "4d1abec8ced794178c0631905fc42de20e42ea788cd4ad0fb124e97f6615e8ad"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/constant/polyMesh/owner",
+     "sha256": "04ed6f8553680b159990e0140d7cff12194aabc903af478fa52903e8353c83c1"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/constant/polyMesh/pointZones",
+     "sha256": "67b0bdf2544517af7c59b973d529e32a1582464a4bf3976fa73215621e901323"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/constant/polyMesh/points",
+     "sha256": "987a088cb09ff63633f3918676c70b7351b6cbd490720e7e8aea5ef5018d4bcd"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_2000/constant/transportProperties",
+     "sha256": "9a003b5b105ddaca96d1984f5e73e3da7b0dbbe19d4b35ff51c6c53e58b61c7e"
+    },
+    {
+     "path": "data/mcconkey/cache/holdout_duct_squareDuct_Re_2000.npz",
+     "sha256": "9535e469d074198aae62b1f50d4633f6c157d90ea6f058520641d522aee56acf"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/0/U",
+     "sha256": "a4cbbf25d206f8686bd1f5c28fac8325e74649e2a9407ebeb2c1fe1552304e0f"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/0/epsilon",
+     "sha256": "91d6b2433d77b182523489515afc60785d8ca7c3ab9d30894586a192d0cca286"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/0/f",
+     "sha256": "c0dee7c7378ac9ab108e7e91b910c1da15746c69d731c2b474619d8ff7a696ae"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/0/k",
+     "sha256": "4600f3abc5be5cc4fba88670b8e3acac89cbcf3ca86208c39ddfb0e4d3511756"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/0/nut",
+     "sha256": "84109a9251521821833eed31a8c9294f7567d1139bae8da99bd2e79173762bf8"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/0/omega",
+     "sha256": "755617088a939addbf0d24f3a6d5049a0e508a2871a4e1f21d84796dfc58da62"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/0/p",
+     "sha256": "13155cd985362e1d8c5c868aa72477adcaebc2fc79dfbe381f9c5733eaf0dda4"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/0/phit",
+     "sha256": "550ddc6ac0cffb9ad918b6f2d366b05422b2569efac8bb65902872d865ffa872"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/constant/polyMesh/boundary",
+     "sha256": "ea3266884fb29e9209e65951ed31c47246e7477819d7197e37a40441bf41ad6d"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/constant/polyMesh/cellZones",
+     "sha256": "44176c848bdc9565958a9b365db2254907e20d74f9712b7079f097af6676e75a"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/constant/polyMesh/faceZones",
+     "sha256": "345bc04fb30270b01620fcc1658e1215c83303af98381f18702474fbcdca8b38"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/constant/polyMesh/faces",
+     "sha256": "bbde874993a0d697349bdc042819a56986ddd3bb7f7c3ea4ede5e885da2eb849"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/constant/polyMesh/neighbour",
+     "sha256": "06fd3f810b669c7cc4a603c927768c705d0a2ccbc0b3e4ea29c926203ea23231"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/constant/polyMesh/owner",
+     "sha256": "3b411a3e70272adb8814a2ed41acea60b3e1be6a5abea34c7aef576be6b8481c"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/constant/polyMesh/pointZones",
+     "sha256": "edafcf9a6d6040aa4f03611bc9c8975ebf1a57d980800af18c22ed369b7c2a3b"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/constant/polyMesh/points",
+     "sha256": "e08d61dbe3f376fe4f2af8ccc8fcbc4a12d2076fab45d50cf554bfdf9f4579ec"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/constant/transportProperties",
+     "sha256": "8e20019c11aea5d4dad7c7b74239c9b41af12b761ce2e205c3367217ab5ef918"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/constant/turbulenceProperties",
+     "sha256": "b8cda567eb678ea3a23aa287230446f91d89579c308467b304acab62891c5137"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/system/blockMeshDict",
+     "sha256": "967588b2bb7287bad2610b17968c890f5be90dea35f2d041069c6fda43f64f0e"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/system/controlDict",
+     "sha256": "d0ae7e49de6bb1991afe262b3d022ec0926e96e410ae24e3ec0e742c2afe2c00"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/system/decomposeParDict",
+     "sha256": "0bdf56e9ad7f63d20afbd41bfef080e167653020960d3ed2142da354b166eda5"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/system/fvOptions",
+     "sha256": "5b991d7a97c734e40c9cf08e6678a2093e0c74d00b6a4db71d56765a4a2cb158"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/system/fvSchemes",
+     "sha256": "69fdc8e0231c0836c0e5b6f79954ed6826cfa2cefb3a9218a4c02f69ac13ed07"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_2000/system/fvSolution",
+     "sha256": "942e4f66bd9e54f16b9afd77119457241cbc43355c512efc0b8f337b4c22c301"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_with_derived_wall_friction",
+     "normalization": "RMS full-vector error / reference RMS speed (legacy variable u_bulk; not a volume bulk integral)",
+     "release_qualified": false
+    },
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "DNS_with_derived_wall_friction",
+     "normalization": "RMS difference of dimensionless Cf; no extra division by SST error",
+     "release_qualified": false
+    },
+    {
+     "name": "shear_stress_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "DNS_with_derived_wall_friction",
+     "normalization": "RMS two-component (xy,xz) shear-stress vector error / reference RMS speed squared",
+     "release_qualified": false
+    },
+    {
+     "name": "composite",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "DNS_with_derived_wall_friction",
+     "normalization": "Legacy diagnostic: 0.5 E_U + 0.3 E_Cf + 0.2 E_uv; excluded from primary objective",
+     "release_qualified": false
+    },
+    {
+     "name": "secondary_velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_with_derived_wall_friction",
+     "normalization": "RMS in-plane vector error / reference RMS speed",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 5000,
+    "nprocs": 4,
+    "long_span_steps": 1250,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "secondary_rms_model_over_bulk": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    },
+    "mesh_id": "fully_developed_96x96x1",
+    "mesh_qualification": "Requires current 1-vs-4 streamwise cell comparison; cross-section resolution unchanged"
+   }
+  },
+  {
+   "id": "rotchan_ro10",
+   "family": "rotating_channel",
+   "group": "KA1993_PCH22_channel",
+   "geometry_lineage": "KA1993_PCH22_channel",
+   "role": "calibration",
+   "exposure": "exposed",
+   "adapter": "rotation",
+   "adapter_config": {
+    "ro": 0.1,
+    "reference_file": "data/assets/references/rotation/f2/f2_r_10.dat"
+   },
+   "required": true,
+   "reference": {
+    "quality": "DNS_velocity_budget_derived_shear_and_Cf",
+    "paths": [
+     "data/assets/references/rotation/f2/f2_r_10.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/rotation/f2/f2_r_10.dat",
+     "sha256": "a29a50542ce4a0f4c89219eec7439d59de0d01826a4d175e6ceaa135b8392f80"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS velocity error in reference nondimensional units Uref=1; see adapter sampling",
+     "release_qualified": false
+    },
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS difference of dimensionless Cf; no extra division by SST error",
+     "release_qualified": false
+    },
+    {
+     "name": "shear_stress_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS xy shear-stress error in reference nondimensional units Uref squared=1",
+     "release_qualified": false
+    },
+    {
+     "name": "composite",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Legacy diagnostic: 0.5 E_U + 0.3 E_Cf + 0.2 E_uv; excluded from primary objective",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_friction_asymmetry_error",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Absolute difference of bottom-wall/top-wall Cf ratios",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 40000,
+    "nprocs": 1,
+    "long_span_steps": 10000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "wall_friction_ratio": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    }
+   }
+  },
+  {
+   "id": "rotchan_ro00",
+   "family": "rotating_channel",
+   "group": "KA1993_PCH22_channel",
+   "geometry_lineage": "KA1993_PCH22_channel",
+   "role": "calibration",
+   "exposure": "exposed",
+   "adapter": "rotation",
+   "adapter_config": {
+    "ro": 0.0,
+    "reference_file": "data/assets/references/rotation/f2/f2_r_00.dat"
+   },
+   "required": true,
+   "reference": {
+    "quality": "DNS_velocity_budget_derived_shear_and_Cf",
+    "paths": [
+     "data/assets/references/rotation/f2/f2_r_00.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/rotation/f2/f2_r_00.dat",
+     "sha256": "435b3e1e8b6650ed25614021c14a215280c86c36fd41abb845d737c2085e65c7"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS velocity error in reference nondimensional units Uref=1; see adapter sampling",
+     "release_qualified": false
+    },
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS difference of dimensionless Cf; no extra division by SST error",
+     "release_qualified": false
+    },
+    {
+     "name": "shear_stress_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS xy shear-stress error in reference nondimensional units Uref squared=1",
+     "release_qualified": false
+    },
+    {
+     "name": "composite",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Legacy diagnostic: 0.5 E_U + 0.3 E_Cf + 0.2 E_uv; excluded from primary objective",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_friction_asymmetry_error",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Absolute difference of bottom-wall/top-wall Cf ratios",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 40000,
+    "nprocs": 1,
+    "long_span_steps": 10000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "wall_friction_ratio": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    }
+   }
+  },
+  {
+   "id": "rotchan_ro50",
+   "family": "rotating_channel",
+   "group": "KA1993_PCH22_channel",
+   "geometry_lineage": "KA1993_PCH22_channel",
+   "role": "calibration",
+   "exposure": "exposed",
+   "adapter": "rotation",
+   "adapter_config": {
+    "ro": 0.5,
+    "reference_file": "data/assets/references/rotation/f2/f2_r_50.dat"
+   },
+   "required": true,
+   "reference": {
+    "quality": "DNS_velocity_budget_derived_shear_and_Cf",
+    "paths": [
+     "data/assets/references/rotation/f2/f2_r_50.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/rotation/f2/f2_r_50.dat",
+     "sha256": "19f9c37893acf3bb73c20ab8bc3df9d6dd08b60256e21d509973044052355e8c"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS velocity error in reference nondimensional units Uref=1; see adapter sampling",
+     "release_qualified": false
+    },
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS difference of dimensionless Cf; no extra division by SST error",
+     "release_qualified": false
+    },
+    {
+     "name": "shear_stress_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS xy shear-stress error in reference nondimensional units Uref squared=1",
+     "release_qualified": false
+    },
+    {
+     "name": "composite",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Legacy diagnostic: 0.5 E_U + 0.3 E_Cf + 0.2 E_uv; excluded from primary objective",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_friction_asymmetry_error",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Absolute difference of bottom-wall/top-wall Cf ratios",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 40000,
+    "nprocs": 1,
+    "long_span_steps": 10000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "wall_friction_ratio": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    }
+   }
+  },
+  {
+   "id": "tmr_plate_137x97",
+   "family": "tmr_plate",
+   "group": "NASA_TMR_plate",
+   "geometry_lineage": "NASA_TMR_plate",
+   "role": "protection",
+   "exposure": "exposed",
+   "adapter": "plate",
+   "adapter_config": {
+    "grid": "137x97",
+    "cf_reference": "data/assets/references/tmr/FlatPlate/FlatPlate_SST_cf_plate_sstv.dat"
+   },
+   "required": true,
+   "reference": {
+    "quality": "numerical_verification_only",
+    "paths": [
+     "data/assets/references/tmr/FlatPlate/FlatPlate_SST_cf_plate_sstv.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending",
+    "condition_caveat": "CFL3D SST reference is numerical verification and not physical truth; compressibility/model-variant/mesh and inflow differences require qualification"
+   },
+   "assets": [
+    {
+     "path": "data/assets/grids/plate/flatplate_clust2_2levelsdown_137x97.p2dfmt",
+     "sha256": "55ae965f2151e5644e3c7c1b6fecea7ce0a16cf4c34eae6997f27683a4e2ac44"
+    },
+    {
+     "path": "data/assets/references/tmr/FlatPlate/FlatPlate_SST_cf_plate_sstv.dat",
+     "sha256": "a56bd2d16818456af015b13839f0a991b4b85bfa6c18242e7c331a2c7a4d40e8"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "numerical_verification_only",
+     "normalization": "RMS signed tangential Cf difference at overlapping CFL3D reference points (first zone); Cf=-2 wallShearStress dot unit tangent, Uref=1; numerical verification only",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_cf",
+     "kind": "profile_departure",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "matched_SST_preservation",
+     "normalization": "Maximum pointwise difference with a declared physical floor; not reference accuracy",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 8000,
+    "nprocs": 4,
+    "long_span_steps": 2000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "drag_coefficient": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "lift_coefficient": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "wall_cf": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    }
+   }
+  },
+  {
+   "id": "tmr_bump_177x81",
+   "family": "tmr_bump",
+   "group": "NASA_TMR_bump",
+   "geometry_lineage": "NASA_TMR_bump",
+   "role": "protection",
+   "exposure": "exposed",
+   "adapter": "bump",
+   "adapter_config": {
+    "grid": "177x81",
+    "cf_reference": "data/assets/references/tmr/Bump_SST2003/Bump_SST2003_cf_bump_sst2003.dat"
+   },
+   "required": true,
+   "reference": {
+    "quality": "numerical_verification_only",
+    "paths": [
+     "data/assets/references/tmr/Bump_SST2003/Bump_SST2003_cf_bump_sst2003.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending",
+    "condition_caveat": "CFL3D SST reference is numerical verification and not physical truth; compressibility/model-variant/mesh and inflow differences require qualification"
+   },
+   "assets": [
+    {
+     "path": "data/assets/grids/bump/bump_3levelsdown_177x81.p2dfmt",
+     "sha256": "0f11cf2818516326be73b4523d84b7132f395df354b300aa1caf3971bff16902"
+    },
+    {
+     "path": "data/assets/references/tmr/Bump_SST2003/Bump_SST2003_cf_bump_sst2003.dat",
+     "sha256": "a21194119a1adf9464bac5dfd027a088b7727b57cecf99b70fb6152c994c7a0d"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "numerical_verification_only",
+     "normalization": "RMS signed tangential Cf difference at overlapping CFL3D reference points (first zone); Cf=-2 wallShearStress dot unit tangent, Uref=1; numerical verification only",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_cf",
+     "kind": "profile_departure",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "matched_SST_preservation",
+     "normalization": "Maximum pointwise difference with a declared physical floor; not reference accuracy",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 8000,
+    "nprocs": 4,
+    "long_span_steps": 2000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "drag_coefficient": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "lift_coefficient": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "wall_cf": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    }
+   }
+  },
+  {
+   "id": "naca0012_a010_225x65",
+   "family": "airfoil_naca0012",
+   "group": "NASA_NACA0012_Ladson_lineage",
+   "geometry_lineage": "NASA_NACA0012_Ladson_lineage",
+   "role": "protection",
+   "exposure": "exposed",
+   "adapter": "naca",
+   "adapter_config": {
+    "grid": "225x65",
+    "alpha_deg": 10,
+    "force_reference": "data/assets/references/tmr/NACA0012/NACA0012_validation_CLCD_Ladson_expdata.dat"
+   },
+   "required": true,
+   "reference": {
+    "quality": "tripped_experiment_incidence_bin",
+    "paths": [
+     "data/assets/references/tmr/NACA0012/NACA0012_validation_CLCD_Ladson_expdata.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending",
+    "condition_caveat": "Re_c=6e6, tripped experiment M=0.15 versus fully turbulent incompressible solver; bins combine available grit sets within \u00b10.7 degrees, not a confidence interval"
+   },
+   "assets": [
+    {
+     "path": "data/assets/grids/naca/n0012_225-65.p2dfmt",
+     "sha256": "66817d6bbc9353cb0ca9867f958da1bcce6485f7d68ec7038362a341bdb0fa8c"
+    },
+    {
+     "path": "data/assets/references/tmr/NACA0012/NACA0012_validation_CLCD_Ladson_expdata.dat",
+     "sha256": "78cd2f6aa4968e80f44cbf6c96f699bd9c6e45681d958ec528a10cf72ed23357"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "drag_abs_error",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "tripped_experiment_incidence_bin",
+     "normalization": "Absolute Cd difference from mean tripped experimental incidence-bin Cd; Aref=chord*span, Uref=1",
+     "release_qualified": false
+    },
+    {
+     "name": "lift_abs_error",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "tripped_experiment_incidence_bin",
+     "normalization": "Absolute Cl difference from mean tripped experimental incidence-bin Cl; no division by near-zero Cl; Aref=chord*span, Uref=1",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_cf",
+     "kind": "profile_departure",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "matched_SST_preservation",
+     "normalization": "Maximum pointwise difference with a declared physical floor; not reference accuracy",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_cp",
+     "kind": "profile_departure",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "matched_SST_preservation",
+     "normalization": "Maximum pointwise difference with a declared physical floor; not reference accuracy",
+     "release_qualified": false
+    },
+    {
+     "name": "drag_coefficient",
+     "kind": "departure",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "matched_SST_preservation",
+     "normalization": "Absolute departure from matched SST with physical allowance; no division by zero lift",
+     "release_qualified": false
+    },
+    {
+     "name": "lift_coefficient",
+     "kind": "departure",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "matched_SST_preservation",
+     "normalization": "Absolute departure from matched SST with physical allowance; no division by zero lift",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 40000,
+    "nprocs": 4,
+    "long_span_steps": 10000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "drag_coefficient": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "lift_coefficient": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "wall_cf": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "wall_cp": {
+      "relative_tolerance": 0.0005,
+      "scale_floor": 1.0
+     }
+    }
+   },
+   "admission_policy": {
+    "scope": "aerodynamic_control",
+    "minimum_span_steps": 10000,
+    "minimum_span_fraction": 0.25,
+    "max_absolute_drift": {
+     "drag_coefficient": 1e-06,
+     "lift_coefficient": 0.0001,
+     "wall_cf": 1e-06,
+     "wall_cp": 0.0005
+    }
+   }
+  },
+  {
+   "id": "nasa_hump_fine",
+   "family": "nasa_hump",
+   "group": "NASA_Greenblatt_hump",
+   "geometry_lineage": "NASA_Greenblatt_hump",
+   "role": "adaptive_validation",
+   "exposure": "exposed",
+   "adapter": "hump",
+   "adapter_config": {
+    "grid": "fine"
+   },
+   "required": true,
+   "reference": {
+    "quality": "experiment_inflow_and_uncertainty_pending",
+    "paths": [
+     "data/assets/references/hump/noflow_cf.exp.dat",
+     "data/assets/references/hump/noflow_vel_and_turb.exp.dat",
+     "data/assets/references/hump/noflow_u_inflow.exp.dat",
+     "data/assets/references/hump/noflow_cp.exp.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending"
+   },
+   "assets": [
+    {
+     "path": "data/assets/grids/hump/hump2newtop_noplenumZ409x109.p2dfmt.gz",
+     "sha256": "f33fcdba13f7e5add6a65ef49b88b4b24658c267947f814b7a636ebedf2d7deb"
+    },
+    {
+     "path": "data/assets/references/hump/noflow_cf.exp.dat",
+     "sha256": "f38f1d303c6f43937da188682196ad61dde380b9fc47a099e3d08bdda406d9a8"
+    },
+    {
+     "path": "data/assets/references/hump/noflow_cp.exp.dat",
+     "sha256": "a30835421ac9448d1ea83e93d5565f0beb8a7550e3033654d4a4efa4d4d3e024"
+    },
+    {
+     "path": "data/assets/references/hump/noflow_u_inflow.exp.dat",
+     "sha256": "21df0b41cdc044dc1551eb0bd5cec128d23ea3bba9b92bcce707846f33664b6d"
+    },
+    {
+     "path": "data/assets/references/hump/noflow_vel_and_turb.exp.dat",
+     "sha256": "5a6d4542e332da78729fe623a39368244a15299848b5f60fa084afa3e6025423"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "experiment_inflow_and_uncertainty_pending",
+     "normalization": "RMS velocity error in reference nondimensional units Uref=1; see adapter sampling",
+     "release_qualified": false
+    },
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "experiment_inflow_and_uncertainty_pending",
+     "normalization": "RMS difference of dimensionless Cf; no extra division by SST error",
+     "release_qualified": false
+    },
+    {
+     "name": "shear_stress_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "experiment_inflow_and_uncertainty_pending",
+     "normalization": "RMS xy shear-stress error in reference nondimensional units Uref squared=1",
+     "release_qualified": false
+    },
+    {
+     "name": "composite",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "experiment_inflow_and_uncertainty_pending",
+     "normalization": "Legacy diagnostic: 0.5 E_U + 0.3 E_Cf + 0.2 E_uv; excluded from primary objective",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 8000,
+    "nprocs": 4,
+    "long_span_steps": 2000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    }
+   }
+  },
+  {
+   "id": "squareDuct_Re_3200",
+   "family": "square_duct",
+   "group": "pinelli_square_duct_lineage",
+   "geometry_lineage": "pinelli_square_duct_lineage",
+   "role": "verification",
+   "exposure": "held_out_condition",
+   "adapter": "duct",
+   "adapter_config": {
+    "case_id": "squareDuct_Re_3200",
+    "reference_npz": "data/mcconkey/cache/holdout_duct_squareDuct_Re_3200.npz",
+    "dns_case": "data/assets/references/duct/squareDuct_Re_3200",
+    "streamwise_cells": 1
+   },
+   "required": false,
+   "reference": {
+    "quality": "DNS_with_derived_wall_friction",
+    "paths": [
+     "data/mcconkey/cache/holdout_duct_squareDuct_Re_3200.npz",
+     "data/assets/references/duct/squareDuct_Re_3200/0/U",
+     "data/assets/references/duct/squareDuct_Re_3200/0/tau"
+    ],
+    "qualification": "Verification use: a Reynolds number of the development DNS set never evaluated by the search"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/0/U",
+     "sha256": "d0cbbb0264ef03bd71b3f4baea87f29a15349fc62202d47624060534d394b0a9"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/0/tau",
+     "sha256": "33fc72212a88c236f1d28e9679380844d85c822df627ae3466fe66f8f6aa0e99"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/constant/polyMesh/boundary",
+     "sha256": "9ccc55c650e832f0496f95c46075f27b84dac089bd6b5812530b6bae4b8602e4"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/constant/polyMesh/cellZones",
+     "sha256": "5943fab8d36ba1023b00f4bdc97330cfdd00480bca6a2c70996992d7ca7689d2"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/constant/polyMesh/faceZones",
+     "sha256": "e28523ae63b9422081eb4d1caf745e16d4706d940387300821a1ea79a7849bb4"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/constant/polyMesh/faces",
+     "sha256": "a4e603c61fcc0c5517044722cb3d3ad56caff15c16983a580fde241bb11e4b8d"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/constant/polyMesh/neighbour",
+     "sha256": "4d1abec8ced794178c0631905fc42de20e42ea788cd4ad0fb124e97f6615e8ad"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/constant/polyMesh/owner",
+     "sha256": "04ed6f8553680b159990e0140d7cff12194aabc903af478fa52903e8353c83c1"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/constant/polyMesh/pointZones",
+     "sha256": "67b0bdf2544517af7c59b973d529e32a1582464a4bf3976fa73215621e901323"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/constant/polyMesh/points",
+     "sha256": "987a088cb09ff63633f3918676c70b7351b6cbd490720e7e8aea5ef5018d4bcd"
+    },
+    {
+     "path": "data/assets/references/duct/squareDuct_Re_3200/constant/transportProperties",
+     "sha256": "9a003b5b105ddaca96d1984f5e73e3da7b0dbbe19d4b35ff51c6c53e58b61c7e"
+    },
+    {
+     "path": "data/mcconkey/cache/holdout_duct_squareDuct_Re_3200.npz",
+     "sha256": "162961ea1ba94949d16d4fcc547c03269b966cae6ae5760d318f3da44ee4fc2b"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/0/U",
+     "sha256": "a4cbbf25d206f8686bd1f5c28fac8325e74649e2a9407ebeb2c1fe1552304e0f"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/0/epsilon",
+     "sha256": "91d6b2433d77b182523489515afc60785d8ca7c3ab9d30894586a192d0cca286"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/0/f",
+     "sha256": "c0dee7c7378ac9ab108e7e91b910c1da15746c69d731c2b474619d8ff7a696ae"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/0/k",
+     "sha256": "4600f3abc5be5cc4fba88670b8e3acac89cbcf3ca86208c39ddfb0e4d3511756"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/0/nut",
+     "sha256": "84109a9251521821833eed31a8c9294f7567d1139bae8da99bd2e79173762bf8"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/0/omega",
+     "sha256": "755617088a939addbf0d24f3a6d5049a0e508a2871a4e1f21d84796dfc58da62"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/0/p",
+     "sha256": "13155cd985362e1d8c5c868aa72477adcaebc2fc79dfbe381f9c5733eaf0dda4"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/0/phit",
+     "sha256": "550ddc6ac0cffb9ad918b6f2d366b05422b2569efac8bb65902872d865ffa872"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/constant/polyMesh/boundary",
+     "sha256": "ea3266884fb29e9209e65951ed31c47246e7477819d7197e37a40441bf41ad6d"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/constant/polyMesh/cellZones",
+     "sha256": "44176c848bdc9565958a9b365db2254907e20d74f9712b7079f097af6676e75a"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/constant/polyMesh/faceZones",
+     "sha256": "345bc04fb30270b01620fcc1658e1215c83303af98381f18702474fbcdca8b38"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/constant/polyMesh/faces",
+     "sha256": "bbde874993a0d697349bdc042819a56986ddd3bb7f7c3ea4ede5e885da2eb849"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/constant/polyMesh/neighbour",
+     "sha256": "06fd3f810b669c7cc4a603c927768c705d0a2ccbc0b3e4ea29c926203ea23231"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/constant/polyMesh/owner",
+     "sha256": "3b411a3e70272adb8814a2ed41acea60b3e1be6a5abea34c7aef576be6b8481c"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/constant/polyMesh/pointZones",
+     "sha256": "edafcf9a6d6040aa4f03611bc9c8975ebf1a57d980800af18c22ed369b7c2a3b"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/constant/polyMesh/points",
+     "sha256": "e08d61dbe3f376fe4f2af8ccc8fcbc4a12d2076fab45d50cf554bfdf9f4579ec"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/constant/transportProperties",
+     "sha256": "ada03fb9d8691f8e0532328412188af3842a9bc15330dc3310eb9480677a509a"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/constant/turbulenceProperties",
+     "sha256": "b8cda567eb678ea3a23aa287230446f91d89579c308467b304acab62891c5137"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/system/blockMeshDict",
+     "sha256": "967588b2bb7287bad2610b17968c890f5be90dea35f2d041069c6fda43f64f0e"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/system/controlDict",
+     "sha256": "d0ae7e49de6bb1991afe262b3d022ec0926e96e410ae24e3ec0e742c2afe2c00"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/system/decomposeParDict",
+     "sha256": "0bdf56e9ad7f63d20afbd41bfef080e167653020960d3ed2142da354b166eda5"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/system/fvOptions",
+     "sha256": "5b991d7a97c734e40c9cf08e6678a2093e0c74d00b6a4db71d56765a4a2cb158"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/system/fvSchemes",
+     "sha256": "69fdc8e0231c0836c0e5b6f79954ed6826cfa2cefb3a9218a4c02f69ac13ed07"
+    },
+    {
+     "path": "data/mcconkey/foam/komegasst/holdout_duct/squareDuct_Re_3200/system/fvSolution",
+     "sha256": "942e4f66bd9e54f16b9afd77119457241cbc43355c512efc0b8f337b4c22c301"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_with_derived_wall_friction",
+     "normalization": "RMS full-vector error / reference RMS speed (legacy variable u_bulk; not a volume bulk integral)",
+     "release_qualified": false
+    },
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "DNS_with_derived_wall_friction",
+     "normalization": "RMS difference of dimensionless Cf; no extra division by SST error",
+     "release_qualified": false
+    },
+    {
+     "name": "shear_stress_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "DNS_with_derived_wall_friction",
+     "normalization": "RMS two-component (xy,xz) shear-stress vector error / reference RMS speed squared",
+     "release_qualified": false
+    },
+    {
+     "name": "composite",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "DNS_with_derived_wall_friction",
+     "normalization": "Legacy diagnostic: 0.5 E_U + 0.3 E_Cf + 0.2 E_uv; excluded from primary objective",
+     "release_qualified": false
+    },
+    {
+     "name": "secondary_velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_with_derived_wall_friction",
+     "normalization": "RMS in-plane vector error / reference RMS speed",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 5000,
+    "nprocs": 4,
+    "long_span_steps": 1250,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "secondary_rms_model_over_bulk": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    },
+    "mesh_id": "fully_developed_96x96x1",
+    "mesh_qualification": "Requires current 1-vs-4 streamwise cell comparison; cross-section resolution unchanged"
+   },
+   "derived_from": "squareDuct_Re_2000",
+   "verification_purpose": "held-out Reynolds number of the square-duct lineage"
+  },
+  {
+   "id": "rotchan_ro01",
+   "family": "rotating_channel",
+   "group": "KA1993_PCH22_channel",
+   "geometry_lineage": "KA1993_PCH22_channel",
+   "role": "verification",
+   "exposure": "held_out_condition",
+   "adapter": "rotation",
+   "adapter_config": {
+    "ro": 0.01,
+    "reference_file": "data/assets/references/rotation/f2/f2_r_01.dat"
+   },
+   "required": false,
+   "reference": {
+    "quality": "DNS_velocity_budget_derived_shear_and_Cf",
+    "paths": [
+     "data/assets/references/rotation/f2/f2_r_01.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/rotation/f2/f2_r_01.dat",
+     "sha256": "1fe885c6049d365743bb251efe355e057d7f46aeca43ff2a1d8d6560bed8fa19"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS velocity error in reference nondimensional units Uref=1; see adapter sampling",
+     "release_qualified": false
+    },
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS difference of dimensionless Cf; no extra division by SST error",
+     "release_qualified": false
+    },
+    {
+     "name": "shear_stress_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS xy shear-stress error in reference nondimensional units Uref squared=1",
+     "release_qualified": false
+    },
+    {
+     "name": "composite",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Legacy diagnostic: 0.5 E_U + 0.3 E_Cf + 0.2 E_uv; excluded from primary objective",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_friction_asymmetry_error",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Absolute difference of bottom-wall/top-wall Cf ratios",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 40000,
+    "nprocs": 1,
+    "long_span_steps": 10000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "wall_friction_ratio": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    }
+   },
+   "derived_from": "rotchan_ro10",
+   "verification_purpose": "held-out rotation number between and below the trained points"
+  },
+  {
+   "id": "rotchan_ro05",
+   "family": "rotating_channel",
+   "group": "KA1993_PCH22_channel",
+   "geometry_lineage": "KA1993_PCH22_channel",
+   "role": "verification",
+   "exposure": "held_out_condition",
+   "adapter": "rotation",
+   "adapter_config": {
+    "ro": 0.05,
+    "reference_file": "data/assets/references/rotation/f2/f2_r_05.dat"
+   },
+   "required": false,
+   "reference": {
+    "quality": "DNS_velocity_budget_derived_shear_and_Cf",
+    "paths": [
+     "data/assets/references/rotation/f2/f2_r_05.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/rotation/f2/f2_r_05.dat",
+     "sha256": "99a24c2efeb29cce85ba7aae91376b7a267b932e7afaf2ccc59b94b725a2ec79"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS velocity error in reference nondimensional units Uref=1; see adapter sampling",
+     "release_qualified": false
+    },
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS difference of dimensionless Cf; no extra division by SST error",
+     "release_qualified": false
+    },
+    {
+     "name": "shear_stress_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS xy shear-stress error in reference nondimensional units Uref squared=1",
+     "release_qualified": false
+    },
+    {
+     "name": "composite",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Legacy diagnostic: 0.5 E_U + 0.3 E_Cf + 0.2 E_uv; excluded from primary objective",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_friction_asymmetry_error",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Absolute difference of bottom-wall/top-wall Cf ratios",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 40000,
+    "nprocs": 1,
+    "long_span_steps": 10000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "wall_friction_ratio": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    }
+   },
+   "derived_from": "rotchan_ro10",
+   "verification_purpose": "held-out rotation number between and below the trained points"
+  },
+  {
+   "id": "rotchan_ro15",
+   "family": "rotating_channel",
+   "group": "KA1993_PCH22_channel",
+   "geometry_lineage": "KA1993_PCH22_channel",
+   "role": "verification",
+   "exposure": "held_out_condition",
+   "adapter": "rotation",
+   "adapter_config": {
+    "ro": 0.15,
+    "reference_file": "data/assets/references/rotation/f2/f2_r_15.dat"
+   },
+   "required": false,
+   "reference": {
+    "quality": "DNS_velocity_budget_derived_shear_and_Cf",
+    "paths": [
+     "data/assets/references/rotation/f2/f2_r_15.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/rotation/f2/f2_r_15.dat",
+     "sha256": "4a8930dbd0c73855269a8aa7324cbf6a93b2f8235e0e1f92ee2ee1a85cde0905"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS velocity error in reference nondimensional units Uref=1; see adapter sampling",
+     "release_qualified": false
+    },
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS difference of dimensionless Cf; no extra division by SST error",
+     "release_qualified": false
+    },
+    {
+     "name": "shear_stress_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS xy shear-stress error in reference nondimensional units Uref squared=1",
+     "release_qualified": false
+    },
+    {
+     "name": "composite",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Legacy diagnostic: 0.5 E_U + 0.3 E_Cf + 0.2 E_uv; excluded from primary objective",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_friction_asymmetry_error",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Absolute difference of bottom-wall/top-wall Cf ratios",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 40000,
+    "nprocs": 1,
+    "long_span_steps": 10000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "wall_friction_ratio": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    }
+   },
+   "derived_from": "rotchan_ro10",
+   "verification_purpose": "held-out rotation number between and below the trained points"
+  },
+  {
+   "id": "rotchan_ro20",
+   "family": "rotating_channel",
+   "group": "KA1993_PCH22_channel",
+   "geometry_lineage": "KA1993_PCH22_channel",
+   "role": "verification",
+   "exposure": "held_out_condition",
+   "adapter": "rotation",
+   "adapter_config": {
+    "ro": 0.2,
+    "reference_file": "data/assets/references/rotation/f2/f2_r_20.dat"
+   },
+   "required": false,
+   "reference": {
+    "quality": "DNS_velocity_budget_derived_shear_and_Cf",
+    "paths": [
+     "data/assets/references/rotation/f2/f2_r_20.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/rotation/f2/f2_r_20.dat",
+     "sha256": "02794991547aa330f7445dd7b063ff1f9cc7bd58922a321d2debddc4cb2c9c05"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS velocity error in reference nondimensional units Uref=1; see adapter sampling",
+     "release_qualified": false
+    },
+    {
+     "name": "skin_friction_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.3,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS difference of dimensionless Cf; no extra division by SST error",
+     "release_qualified": false
+    },
+    {
+     "name": "shear_stress_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "RMS xy shear-stress error in reference nondimensional units Uref squared=1",
+     "release_qualified": false
+    },
+    {
+     "name": "composite",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Legacy diagnostic: 0.5 E_U + 0.3 E_Cf + 0.2 E_uv; excluded from primary objective",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_friction_asymmetry_error",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "DNS_velocity_budget_derived_shear_and_Cf",
+     "normalization": "Absolute difference of bottom-wall/top-wall Cf ratios",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 40000,
+    "nprocs": 1,
+    "long_span_steps": 10000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "wall_friction_ratio": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     }
+    }
+   },
+   "derived_from": "rotchan_ro10",
+   "verification_purpose": "held-out rotation number between and below the trained points"
+  },
+  {
+   "id": "naca0012_a015_225x65",
+   "family": "airfoil_naca0012",
+   "group": "NASA_NACA0012_Ladson_lineage",
+   "geometry_lineage": "NASA_NACA0012_Ladson_lineage",
+   "role": "protection",
+   "exposure": "held_out_condition",
+   "adapter": "naca",
+   "adapter_config": {
+    "grid": "225x65",
+    "alpha_deg": 15,
+    "force_reference": "data/assets/references/tmr/NACA0012/NACA0012_validation_CLCD_Ladson_expdata.dat"
+   },
+   "required": false,
+   "reference": {
+    "quality": "tripped_experiment_incidence_bin",
+    "paths": [
+     "data/assets/references/tmr/NACA0012/NACA0012_validation_CLCD_Ladson_expdata.dat"
+    ],
+    "qualification": "Development-use; numerical/reference uncertainty and tolerances pending",
+    "condition_caveat": "Re_c=6e6, tripped experiment M=0.15 versus fully turbulent incompressible solver; bins combine available grit sets within \u00b10.7 degrees, not a confidence interval"
+   },
+   "assets": [
+    {
+     "path": "data/assets/grids/naca/n0012_225-65.p2dfmt",
+     "sha256": "66817d6bbc9353cb0ca9867f958da1bcce6485f7d68ec7038362a341bdb0fa8c"
+    },
+    {
+     "path": "data/assets/references/tmr/NACA0012/NACA0012_validation_CLCD_Ladson_expdata.dat",
+     "sha256": "78cd2f6aa4968e80f44cbf6c96f699bd9c6e45681d958ec528a10cf72ed23357"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "drag_abs_error",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "tripped_experiment_incidence_bin",
+     "normalization": "Absolute Cd difference from mean tripped experimental incidence-bin Cd; Aref=chord*span, Uref=1",
+     "release_qualified": false
+    },
+    {
+     "name": "lift_abs_error",
+     "kind": "error",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "tripped_experiment_incidence_bin",
+     "normalization": "Absolute Cl difference from mean tripped experimental incidence-bin Cl; no division by near-zero Cl; Aref=chord*span, Uref=1",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_cf",
+     "kind": "profile_departure",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "matched_SST_preservation",
+     "normalization": "Maximum pointwise difference with a declared physical floor; not reference accuracy",
+     "release_qualified": false
+    },
+    {
+     "name": "wall_cp",
+     "kind": "profile_departure",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "matched_SST_preservation",
+     "normalization": "Maximum pointwise difference with a declared physical floor; not reference accuracy",
+     "release_qualified": false
+    },
+    {
+     "name": "drag_coefficient",
+     "kind": "departure",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "matched_SST_preservation",
+     "normalization": "Absolute departure from matched SST with physical allowance; no division by zero lift",
+     "release_qualified": false
+    },
+    {
+     "name": "lift_coefficient",
+     "kind": "departure",
+     "objective": false,
+     "weight": 0,
+     "reference_quality": "matched_SST_preservation",
+     "normalization": "Absolute departure from matched SST with physical allowance; no division by zero lift",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 40000,
+    "nprocs": 4,
+    "long_span_steps": 10000,
+    "adjacent_window": 5,
+    "turbulence_scheme": "generated",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "drag_coefficient": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "lift_coefficient": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "wall_cf": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "wall_cp": {
+      "relative_tolerance": 0.0005,
+      "scale_floor": 1.0
+     }
+    }
+   },
+   "admission_policy": {
+    "scope": "aerodynamic_control",
+    "minimum_span_steps": 10000,
+    "minimum_span_fraction": 0.25,
+    "max_absolute_drift": {
+     "drag_coefficient": 1e-06,
+     "lift_coefficient": 0.0001,
+     "wall_cf": 1e-06,
+     "wall_cp": 0.0005
+    }
+   },
+   "derived_from": "naca0012_a010_225x65",
+   "verification_purpose": "held-out incidence near stall (Ladson, tripped, 15 degrees)"
+  },
+  {
+   "id": "faith_hill",
+   "family": "faith_hill",
+   "group": "NASA_FAITH_hill",
+   "geometry_lineage": "NASA_FAITH_hill",
+   "role": "final",
+   "exposure": "locked_unseen",
+   "required": false,
+   "verification_purpose": "held-out 3D flow",
+   "independence_evidence": "NASA FAITH experiment (Bell, Heineck, Zilliac, Mehta and Long; NASA Ames), an axisymmetric cosine hill of height H = 0.1524 m at Re_H = 5e5: a geometry, facility and measurement campaign unrelated to every development case. No FORGE v2 or V3 search or selection step evaluated it; the only earlier use was a FORGE v1 Phase-4 holdout run of stock SST and v1 candidates, which none of the V3 inputs were chosen from.",
+   "adapter": "faith",
+   "adapter_config": {
+    "mesh": {
+     "nx": 260,
+     "ny": 90,
+     "nz": 80
+    }
+   },
+   "reference": {
+    "quality": "experiment_PIV_and_FISF",
+    "paths": [
+     "cases/faith/PIV_data/Centerline_FAITH_2Hz_4000samps_scalar/U_mean_axis00.dat",
+     "cases/faith/PIV_data/Centerline_FAITH_2Hz_4000samps_scalar/V_mean_axis00.dat"
+    ],
+    "qualification": "Verification use; inflow boundary layer not matched to the tunnel; FISF skin-friction magnitude not used (normalisation unresolved), only the measured separation and reattachment positions",
+    "measured_separation_x_over_h": 0.38,
+    "measured_reattachment_x_over_h": 1.78,
+    "amendment": "Reattachment x/H = 1.78, where the reversed near-wall flow of the centerline PIV plane ends, as in the paper; the frozen verification scorer used 1.72, the zero crossing of the measured surface friction."
+   },
+   "assets": [
+    {
+     "path": "cases/faith/PIV_data/Centerline_FAITH_2Hz_4000samps_scalar/U_mean_axis00.dat",
+     "sha256": "37b8d1268db0abeec2145bc0026fb3a1400c2abb8f6c0ec7f96aa54bb2dcc04e"
+    },
+    {
+     "path": "cases/faith/PIV_data/Centerline_FAITH_2Hz_4000samps_scalar/V_mean_axis00.dat",
+     "sha256": "f0613dcf9447a118702e78a2e1b8445e7fd117ad06aa426945c6716cd85300da"
+    },
+    {
+     "path": "cases/faith/FISF_data/FAITH_FISF.dat",
+     "sha256": "9334f238362188f3c12cac1958e8842a38a1656c6619b7e06cdf6866fd8c0225"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "reference_quality": "experiment_PIV_centreline",
+     "normalization": "Hypot of RMS u and v errors at the PIV points of the symmetry plane, each over U_ref = 49.68 m/s",
+     "release_qualified": false
+    },
+    {
+     "name": "separation_position_error",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.25,
+     "reference_quality": "experiment_FISF_centreline_separation",
+     "normalization": "Absolute difference of the centreline separation position from the measured 0.38 H; a missing bubble is charged the measured bubble length 1.34 H",
+     "release_qualified": false
+    },
+    {
+     "name": "reattachment_position_error",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.25,
+     "reference_quality": "experiment_FISF_centreline_separation",
+     "normalization": "Absolute difference of the centreline reattachment position from the measured 1.72 H; a missing bubble is charged the measured bubble length 1.34 H",
+     "release_qualified": false
+    }
+   ],
+   "protocol": {
+    "end_time": 6000,
+    "nprocs": 48,
+    "long_span_steps": 1500,
+    "adjacent_window": 4,
+    "turbulence_scheme": "generated",
+    "field_retention": "final_state_remote",
+    "required_observables": {
+     "wall_cf_rms": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 1e-05
+     },
+     "rmse_u": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "rmse_v": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     }
+    },
+    "mesh_id": "terrain_following_260x90x80"
+   }
+  },
+  {
+   "id": "ahmed_25",
+   "family": "ahmed_body",
+   "group": "ERCOFTAC_Ahmed_body",
+   "geometry_lineage": "ERCOFTAC_Ahmed_body",
+   "role": "final",
+   "exposure": "locked_unseen",
+   "required": false,
+   "verification_purpose": "held-out 3D bluff body: attached-then-separating 25 degree slant",
+   "independence_evidence": "Lienhart and Becker (LSTM Erlangen, 2003; ERCOFTAC case 82) measurements on the Ahmed body: a bluff road-vehicle geometry, facility and measurement campaign unrelated to every development case, never evaluated by FORGE v1, v2 or V3.",
+   "adapter": "ahmed",
+   "adapter_config": {
+    "slant_deg": 25,
+    "mesh_dir": "data/assets/meshes/ahmed/s25_base/polyMesh",
+    "mesh_level": "base"
+   },
+   "reference": {
+    "quality": "experiment_LDA_and_surface_pressure",
+    "paths": [
+     "data/assets/references/ahmed/ahmed-25-yp000-xz.dat",
+     "data/assets/references/ahmed/ahmed-25-yp100-xz.dat",
+     "data/assets/references/ahmed/ahmed-25-yp180-xz.dat",
+     "data/assets/references/ahmed/ahmed-25-xp000-yz.dat",
+     "data/assets/references/ahmed/ahmed-25-xp080-yz.dat",
+     "data/assets/references/ahmed/ahmed-25-xp200-yz.dat",
+     "data/assets/references/ahmed/ahmed-25-xp500-yz.dat",
+     "data/assets/references/ahmed/ahmed-25-press.dat"
+    ],
+    "qualification": "Verification use; wall functions on body, stilts and floor (not the resolved walls of the development cases); uniform inflow instead of the measured profile; stilt positions from the usual reading of the original drawing",
+    "mesh_report": "data/assets/meshes/ahmed/s25_base/mesh_report.json"
+   },
+   "assets": [
+    {
+     "path": "data/assets/meshes/ahmed/s25_base/polyMesh/boundary",
+     "sha256": "50a5e3ad5b9ac5312906cb1fcd26f0c87a7c2e8b30f17fe43fa14466f631237c"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s25_base/polyMesh/cellZones",
+     "sha256": "ff3a7c72ecd7a77fe65acb0b8dcc592bfa183560281342afb337b88a98658ae7"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s25_base/polyMesh/faceZones",
+     "sha256": "63975c571120f65b2e83d925cee6df3a62d476029699807472494933df781b26"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s25_base/polyMesh/faces",
+     "sha256": "3c193bf2a1d17b84d76925746e35433c4c372fb9dffe3eb9dd82d05a2e1f8804"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s25_base/polyMesh/neighbour",
+     "sha256": "f1a0109189d5be372ff22cc888a2321b16856031ada399dfd760ce7c454dc014"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s25_base/polyMesh/owner",
+     "sha256": "7d406b59c4d1870e49370a0fdc625e85576f778778ef4c1994f11524de0ea4f3"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s25_base/polyMesh/pointZones",
+     "sha256": "4a422eab2fcd39243db61aa6ff3342de6305f54bb4c3628944954cc4ca44bb98"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s25_base/polyMesh/points",
+     "sha256": "3e5df05f3fd2e099df17a8631766120086edb3d5aa7656e8287ad8a99cccd8d0"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-25-yp000-xz.dat",
+     "sha256": "e54fa08736ec3eb07d95a702522765dd52d88c98d92ac46128c9f896566c03c7"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-25-yp100-xz.dat",
+     "sha256": "dac8dbbfb9d7b2c3369d9614e99571b239838c541bdf589cad832247e0504cb2"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-25-yp180-xz.dat",
+     "sha256": "ecbedc440ebcc8202ec37c90c6b27133d1bd8523882209198a07ee9e62b90665"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-25-xp000-yz.dat",
+     "sha256": "368b7cc3fc5176590f23754cbd782707c98556844d64c3d6e6b56d282fb8ec03"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-25-xp080-yz.dat",
+     "sha256": "390e8b0dd1f93416eb1f5f4d481c79932a0dca49aa7f3925815ddb6271162a6b"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-25-xp200-yz.dat",
+     "sha256": "fc345a0a254c907fd4bfd7aa26dce1138d1d4ad1353d22e42265d72bfce9a202"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-25-xp500-yz.dat",
+     "sha256": "a10c83ab62d9956f96abcb7878fe5433e385191074b7606a774af90c222c0184"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-25-press.dat",
+     "sha256": "3debdf04655318dca319f98c216a4e38c239bef9581cba814276c90cdb712fbb"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-front-geo.dat",
+     "sha256": "0a392b20eb362d5115fa8a1302e81be6b5d65697f27182ce0495f2aa36aa133e"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "slant_velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.4,
+     "reference_quality": "experiment_LDA",
+     "release_qualified": false,
+     "normalization": "RMS vector error at the LDA points of the planes y = 0, 100, 180 mm over the slant and in the near wake, over U = 40 m/s"
+    },
+    {
+     "name": "wake_velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.4,
+     "reference_quality": "experiment_LDA",
+     "release_qualified": false,
+     "normalization": "RMS vector error at the LDA points of the cross planes x = 0, 80, 200, 500 mm behind the body (mirrored onto the half model), over U = 40 m/s"
+    },
+    {
+     "name": "rear_pressure_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "experiment_surface_pressure",
+     "release_qualified": false,
+     "normalization": "RMS difference of the pressure coefficient at the rear-surface taps (slant and base); reference pressure the upstream free stream"
+    }
+   ],
+   "protocol": {
+    "end_time": 6000,
+    "nprocs": 48,
+    "long_span_steps": 1500,
+    "adjacent_window": 4,
+    "turbulence_scheme": "generated",
+    "field_retention": "final_state_remote",
+    "required_observables": {
+     "rear_cp_mean": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "slant_u_mean": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "wake_u_mean": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     }
+    },
+    "mesh_id": "snappy_s25_base"
+   }
+  },
+  {
+   "id": "ahmed_35",
+   "family": "ahmed_body",
+   "group": "ERCOFTAC_Ahmed_body",
+   "geometry_lineage": "ERCOFTAC_Ahmed_body",
+   "role": "final",
+   "exposure": "locked_unseen",
+   "required": false,
+   "verification_purpose": "held-out 3D bluff body: fully separated 35 degree slant",
+   "independence_evidence": "Lienhart and Becker (LSTM Erlangen, 2003; ERCOFTAC case 82) measurements on the Ahmed body: a bluff road-vehicle geometry, facility and measurement campaign unrelated to every development case, never evaluated by FORGE v1, v2 or V3.",
+   "adapter": "ahmed",
+   "adapter_config": {
+    "slant_deg": 35,
+    "mesh_dir": "data/assets/meshes/ahmed/s35_base/polyMesh",
+    "mesh_level": "base"
+   },
+   "reference": {
+    "quality": "experiment_LDA_and_surface_pressure",
+    "paths": [
+     "data/assets/references/ahmed/ahmed-35-yp000-xz.dat",
+     "data/assets/references/ahmed/ahmed-35-yp100-xz.dat",
+     "data/assets/references/ahmed/ahmed-35-yp180-xz.dat",
+     "data/assets/references/ahmed/ahmed-35-xp000-yz.dat",
+     "data/assets/references/ahmed/ahmed-35-xp080-yz.dat",
+     "data/assets/references/ahmed/ahmed-35-xp200-yz.dat",
+     "data/assets/references/ahmed/ahmed-35-xp500-yz.dat",
+     "data/assets/references/ahmed/ahmed-35-press.dat"
+    ],
+    "qualification": "Verification use; wall functions on body, stilts and floor (not the resolved walls of the development cases); uniform inflow instead of the measured profile; stilt positions from the usual reading of the original drawing",
+    "mesh_report": "data/assets/meshes/ahmed/s35_base/mesh_report.json"
+   },
+   "assets": [
+    {
+     "path": "data/assets/meshes/ahmed/s35_base/polyMesh/boundary",
+     "sha256": "3a511c16606f823503113be4411158c6005c50c7b789c2d65659bfa82f5db0fd"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s35_base/polyMesh/cellZones",
+     "sha256": "ff3a7c72ecd7a77fe65acb0b8dcc592bfa183560281342afb337b88a98658ae7"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s35_base/polyMesh/faceZones",
+     "sha256": "63975c571120f65b2e83d925cee6df3a62d476029699807472494933df781b26"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s35_base/polyMesh/faces",
+     "sha256": "b49b1505e19816b55ef5b949748075e4e3815dd1316239011311cd28dccc9f24"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s35_base/polyMesh/neighbour",
+     "sha256": "aba7ad3492cea452ee1078bf5e484fc5e1f2bcf9999c3cd4dde7dff36454d8ca"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s35_base/polyMesh/owner",
+     "sha256": "c4ce93010882f2a9c41b7f97feb8ed56c9b3ef9441ba2326dacb229463dfb8f4"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s35_base/polyMesh/pointZones",
+     "sha256": "4a422eab2fcd39243db61aa6ff3342de6305f54bb4c3628944954cc4ca44bb98"
+    },
+    {
+     "path": "data/assets/meshes/ahmed/s35_base/polyMesh/points",
+     "sha256": "d524d59a974863e6eed6f6264f657dae302ebc21f6048995f45eceae817faf3e"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-35-yp000-xz.dat",
+     "sha256": "e6434a929cf9d64502ed362e98b29d8c31ea5c3ffd3e07b907dc9b290c05f1e3"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-35-yp100-xz.dat",
+     "sha256": "9e44682b3e10ed91f412eaba1837baf62256b33330e08d851e8318bfbb7ba1df"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-35-yp180-xz.dat",
+     "sha256": "926229e28879210715e77cd32b41ef3b6609892d0e016899f7fe67937a32a369"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-35-xp000-yz.dat",
+     "sha256": "3816e7945d526be27198f294754a572315cb10651290e29da45091bf030af4db"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-35-xp080-yz.dat",
+     "sha256": "b24d357572c49103aedddcd222c9240f4645bdfd1033f344f8b0729d7e487df0"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-35-xp200-yz.dat",
+     "sha256": "9c88c48e5c5ed704708aef5d08e4f8a1392a93c0bb14f0832e046bcc584f7152"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-35-xp500-yz.dat",
+     "sha256": "5a822c6bf8dcc91cf995edfd848506a15f4eecd0896123d24e8e94711c5bc594"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-35-press.dat",
+     "sha256": "bdfbfe47dc35355e429441dd484f997a64064c1d2bc9383251a5ac4fe9ee89f2"
+    },
+    {
+     "path": "data/assets/references/ahmed/ahmed-front-geo.dat",
+     "sha256": "0a392b20eb362d5115fa8a1302e81be6b5d65697f27182ce0495f2aa36aa133e"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "slant_velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.4,
+     "reference_quality": "experiment_LDA",
+     "release_qualified": false,
+     "normalization": "RMS vector error at the LDA points of the planes y = 0, 100, 180 mm over the slant and in the near wake, over U = 40 m/s"
+    },
+    {
+     "name": "wake_velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.4,
+     "reference_quality": "experiment_LDA",
+     "release_qualified": false,
+     "normalization": "RMS vector error at the LDA points of the cross planes x = 0, 80, 200, 500 mm behind the body (mirrored onto the half model), over U = 40 m/s"
+    },
+    {
+     "name": "rear_pressure_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "reference_quality": "experiment_surface_pressure",
+     "release_qualified": false,
+     "normalization": "RMS difference of the pressure coefficient at the rear-surface taps (slant and base); reference pressure the upstream free stream"
+    }
+   ],
+   "protocol": {
+    "end_time": 6000,
+    "nprocs": 48,
+    "long_span_steps": 1500,
+    "adjacent_window": 4,
+    "turbulence_scheme": "generated",
+    "field_retention": "final_state_remote",
+    "required_observables": {
+     "rear_cp_mean": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "slant_u_mean": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "wake_u_mean": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     }
+    },
+    "mesh_id": "snappy_s35_base"
+   }
+  },
+  {
+   "id": "diffuser3d",
+   "family": "diffuser_3d",
+   "group": "Stanford_3D_diffuser",
+   "geometry_lineage": "Stanford_3D_diffuser",
+   "role": "final",
+   "exposure": "locked_unseen",
+   "required": false,
+   "verification_purpose": "held-out 3D flow: separation in an asymmetric 3D diffuser",
+   "independence_evidence": "Stanford three-dimensional asymmetric diffuser (Cherry, Elkins and Eaton 2008, magnetic-resonance velocimetry; ERCOFTAC UFR 4-16): a geometry, facility and measurement campaign unrelated to every development case, never evaluated by FORGE v1, v2 or V3.",
+   "adapter": "diffuser3d",
+   "adapter_config": {
+    "mesh_level": "base"
+   },
+   "reference": {
+    "quality": "experiment_MRV_and_wall_pressure",
+    "paths": [
+     "data/assets/references/diffuser3d/Diffuser 1 data.mat",
+     "data/assets/references/diffuser3d/UFR4-16_Cp_Re%3D10000.xlsx"
+    ],
+    "qualification": "Verification use; Outlet contraction replaced by a straight extension; inflow by a mapped (recycled) inlet duct instead of the 63-height development channel"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/diffuser3d/Diffuser 1 data.mat",
+     "sha256": "6d3603f15c280b8a87e25ae9dc0a8c2d16cac1ab9cee50fcaae6c6ba294d3374"
+    },
+    {
+     "path": "data/assets/references/diffuser3d/UFR4-16_Cp_Re%3D10000.xlsx",
+     "sha256": "81c3c1f0e3ec95365308902c3bb48a22b6748ee0d17978d885667cc907ba8e3a"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.5,
+     "release_qualified": false,
+     "reference_quality": "experiment_MRV_three_component",
+     "normalization": "RMS vector error at the MRV points inside the diffuser (1.5 mm wall margin, stride 2), over U_b = 1 m/s"
+    },
+    {
+     "name": "backflow_fraction_error",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.25,
+     "release_qualified": false,
+     "reference_quality": "experiment_MRV_three_component",
+     "normalization": "Absolute difference of the fraction of scored points with reversed streamwise velocity"
+    },
+    {
+     "name": "wall_pressure_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.25,
+     "release_qualified": false,
+     "reference_quality": "experiment_wall_pressure",
+     "normalization": "RMS difference of Cp along the bottom-wall centre line, both referred to the first tap"
+    }
+   ],
+   "protocol": {
+    "end_time": 6000,
+    "nprocs": 32,
+    "long_span_steps": 1500,
+    "adjacent_window": 4,
+    "turbulence_scheme": "generated",
+    "field_retention": "final_state_remote",
+    "required_observables": {
+     "backflow_fraction": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "pressure_recovery": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     }
+    },
+    "mesh_id": "diffuser3d_base"
+   }
+  },
+  {
+   "id": "wingbody",
+   "family": "wing_body_junction",
+   "group": "ERCOFTAC_wing_body_junction",
+   "geometry_lineage": "ERCOFTAC_wing_body_junction",
+   "role": "final",
+   "exposure": "locked_unseen",
+   "required": false,
+   "verification_purpose": "held-out 3D flow: horseshoe vortex at a wing-body junction",
+   "independence_evidence": "Devenport and Simpson (1990) and Fleming et al. (1993) wing-body junction (Virginia Tech; ERCOFTAC case 008): a junction/horseshoe-vortex flow, geometry and facility unrelated to every development case, never evaluated by FORGE v1, v2 or V3.",
+   "adapter": "wingbody",
+   "adapter_config": {
+    "mesh_level": "base"
+   },
+   "reference": {
+    "quality": "experiment_LDV_hot_wire_and_wall_pressure",
+    "paths": [
+     "data/assets/references/wingbody/wbj-etab1.dat",
+     "data/assets/references/wingbody/wbj-cp-body-27.dat",
+     "data/assets/references/wingbody/wbj-cp-wing-27.dat",
+     "data/assets/references/wingbody/wbj-el01tc.dat",
+     "data/assets/references/wingbody/wbj-el02tc.dat",
+     "data/assets/references/wingbody/wbj-el03tc.dat",
+     "data/assets/references/wingbody/wbj-el04tc.dat",
+     "data/assets/references/wingbody/wbj-el05tc.dat",
+     "data/assets/references/wingbody/wbj-el06tc.dat",
+     "data/assets/references/wingbody/wbj-el07tc.dat",
+     "data/assets/references/wingbody/wbj-el08tc.dat",
+     "data/assets/references/wingbody/wbj-el09tc.dat",
+     "data/assets/references/wingbody/wbj-el10tc.dat",
+     "data/assets/references/wingbody/wbj-el11tc.dat",
+     "data/assets/references/wingbody/wbj-fp05tc.dat",
+     "data/assets/references/wingbody/wbj-fp06tc.dat",
+     "data/assets/references/wingbody/wbj-fp07tc.dat",
+     "data/assets/references/wingbody/wbj-fp09tc.dat",
+     "data/assets/references/wingbody/wbj-fp10tc.dat",
+     "data/assets/references/wingbody/wbj-fp11tc.dat",
+     "data/assets/references/wingbody/wbj-lp05tc.dat",
+     "data/assets/references/wingbody/wbj-lp08tc.dat",
+     "data/assets/references/wingbody/wbj-lp10tc.dat"
+    ],
+    "qualification": "Verification use; Trailing edge closed and rounded (1 mm), chord 302 mm instead of 305 mm; data of the other studies in the case (different inflow layers) not used"
+   },
+   "assets": [
+    {
+     "path": "data/assets/references/wingbody/wbj-etab1.dat",
+     "sha256": "761e6943def53d16e858c93a94a958d728e22e05233fde2cb6fcced1709c238b"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-cp-body-27.dat",
+     "sha256": "79b915cba2a370ce0f70401b180e8a3e5ba341719d434a254bc0e6bcf3fcde51"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-cp-wing-27.dat",
+     "sha256": "30d2ebe8764d02a58057fc0844a993af886a37b9ba0d1a6c6f014541adf3cdea"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el01tc.dat",
+     "sha256": "53d07758ed80733bc338df894b50ada8c1cc8265da32e1e66115d40cd24aa64d"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el02tc.dat",
+     "sha256": "326a625723c3bb0678b242353cab6cbdaf42e297dfa9a5f8476376e46de1f784"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el03tc.dat",
+     "sha256": "33b7d4604e58c1d224faf699e05e030406d9fdae519d93c6aabeda4b36e0d3a1"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el04tc.dat",
+     "sha256": "2effb882ebfd1f8e91e944c48823e54c8207f761f42fa84360134d91db865329"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el05tc.dat",
+     "sha256": "ad9a003d60800fc7a013123b3fce0aea0bd53a1c27f9b1785f1cd522f3bf3ecf"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el06tc.dat",
+     "sha256": "a7940937fba34f5ff3309c26ad3dd1604187848f5a57043ed501591391d6cbc2"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el07tc.dat",
+     "sha256": "d2226ff7745e81017c2af94c5a9b675985d4f99f5a3ddc9fbcb073a6be5882e9"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el08tc.dat",
+     "sha256": "c4367d162ff29d29e9d8276d113f5e569d3385a2458f1436a4f21971802c3e1d"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el09tc.dat",
+     "sha256": "91d40975aef5d42da1bf421b02b5d7748cf9b5a1dea07da74e8a962d5ca7e286"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el10tc.dat",
+     "sha256": "ee683d02d57c14bfa3a982bc0eeaba087d4e8e48806b5baa4ffc5e1a9d8318de"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-el11tc.dat",
+     "sha256": "2a371f38a5a921d5307fcf66d9d4bbf00ddb43fda9f6d1d9ed80360bc55cb965"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-fp05tc.dat",
+     "sha256": "43237aaa432da1f4ab746eab0b4e99a0a0709c7f9018e76e9b441a5c08aca8e6"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-fp06tc.dat",
+     "sha256": "c99cc8115d3fc00df72aaff39b3fed63a6eacdc3da869f29dc303f0c071fa933"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-fp07tc.dat",
+     "sha256": "8105946af297dead34055ece36fb5b6a7dc4043e8dec0366ba487f79e3420a3b"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-fp09tc.dat",
+     "sha256": "93f6f8577f0ed92117cbb8bb46c9b385b9b278e455f8ff5e66a130b7f2d72299"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-fp10tc.dat",
+     "sha256": "3ca0c9416d15f024865b66fd34bf3f361cb94104b12f20404a78efcc93577069"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-fp11tc.dat",
+     "sha256": "cc9c35774d5d2e28d11439cfc44f2f2d0351111582da428033a6c5c58c07a786"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-lp05tc.dat",
+     "sha256": "1c3c1329ac27bc059b38b16205cc9bd7ebe056b7986031bc31e030aade7ec249"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-lp08tc.dat",
+     "sha256": "ad2381efa828e3d14ac6f390202e45ac4594bcb06b79dac94582eb9a623c208b"
+    },
+    {
+     "path": "data/assets/references/wingbody/wbj-lp10tc.dat",
+     "sha256": "896403b5322553007d6486cd2e3bfdebbddebdf23774cc9b80887969974abffc"
+    }
+   ],
+   "metrics": [
+    {
+     "name": "symmetry_plane_velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.4,
+     "release_qualified": false,
+     "reference_quality": "experiment_LDV",
+     "normalization": "RMS (U, V)/U_ref error of the laser profiles ahead of the wing"
+    },
+    {
+     "name": "crossflow_velocity_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.4,
+     "release_qualified": false,
+     "reference_quality": "experiment_hot_wire_and_LDV",
+     "normalization": "RMS velocity/U_ref error on the cross planes x/C = 0.18-1.5 (components measured at each point)"
+    },
+    {
+     "name": "wall_pressure_rmse",
+     "kind": "error",
+     "objective": true,
+     "weight": 0.2,
+     "release_qualified": false,
+     "reference_quality": "experiment_wall_pressure",
+     "normalization": "RMS Cp difference on the floor and wing taps (27.6 m/s set), free-stream static reference"
+    }
+   ],
+   "protocol": {
+    "end_time": 6000,
+    "nprocs": 32,
+    "long_span_steps": 1500,
+    "adjacent_window": 4,
+    "turbulence_scheme": "generated",
+    "field_retention": "final_state_remote",
+    "required_observables": {
+     "floor_cp_mean": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     },
+     "crossflow_u_mean": {
+      "relative_tolerance": 0.001,
+      "scale_floor": 0.001
+     }
+    },
+    "mesh_id": "wingbody_base"
+   }
+  }
+ ],
+ "contract": {
+  "schema_version": 2,
+  "name": "FORGE V3 verification contract 001",
+  "purpose": "verification",
+  "status": "Development defaults unchanged; settings added only for the new FAITH metrics",
+  "uncertainty": "Conservative paired temporal sensitivity envelopes; reference and grid uncertainty remain separate release requirements",
+  "defaults": {
+   "allowance_abs": 0.0,
+   "allowance_rel": 0.02,
+   "floor": 1e-06,
+   "required": true
+  },
+  "metrics": {
+   "drag_abs_error": {
+    "floor": 1e-05,
+    "allowance_abs": 1e-05
+   },
+   "lift_abs_error": {
+    "floor": 0.001,
+    "allowance_abs": 0.001
+   },
+   "wall_friction_asymmetry_error": {
+    "floor": 0.001
+   },
+   "secondary_velocity_rmse": {
+    "floor": 1e-05
+   },
+   "turbulent_k_rmse": {
+    "primary": false
+   },
+   "wall_cf": {
+    "primary": false,
+    "floor": 0.0001,
+    "allowance_abs": 1e-05,
+    "allowance_rel": 0.02
+   },
+   "wall_cp": {
+    "primary": false,
+    "floor": 1.0,
+    "allowance_abs": 0.005,
+    "allowance_rel": 0
+   },
+   "drag_coefficient": {
+    "primary": false,
+    "floor": 1e-05,
+    "allowance_abs": 1e-05,
+    "allowance_rel": 0.02
+   },
+   "lift_coefficient": {
+    "primary": false,
+    "floor": 0.001,
+    "allowance_abs": 0.001,
+    "allowance_rel": 0.02
+   },
+   "separation_position_error": {
+    "floor": 0.02
+   },
+   "reattachment_position_error": {
+    "floor": 0.02
+   }
+  },
+  "improvement": {
+   "eligible_cases": [],
+   "eligibility_rule": "Freeze from qualified SST before candidate selection: at least one primary reference error exceeds three times its temporal sensitivity and the preset floor",
+   "minimum_gain": 0.1,
+   "case_fraction": 0.75,
+   "median_gain": 0.3
+  },
+  "release_requirements": [
+   "All required numerical and component checks",
+   "Qualified reference and discretization uncertainty",
+   "Predeclared useful-improvement target",
+   "Fresh no-feedback confirmation of one frozen winner",
+   "Independent locked physical test groups",
+   "Matched computational-cost qualification"
+  ],
+  "airfoil_control_scope": "Required NACA surface protection, separate from full-field convergence; not an accuracy or release claim. Two cold SST endpoints must agree before freezing controls.",
+  "source_contract": {
+   "path": "config/contract.json",
+   "sha256": "6aa93d1eb4a7c57be96f9101191b48282b3b854048f06fd8568c631e9c695df4"
+  }
+ }
+}

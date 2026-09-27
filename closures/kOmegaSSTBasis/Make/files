@@ -1,0 +1,5 @@
+basisExpr/exprNode.C
+basisExpr/exprParser.C
+makeKOmegaSSTBasis.C
+
+LIB = $(FOAM_USER_LIBBIN)/libforgeClosures

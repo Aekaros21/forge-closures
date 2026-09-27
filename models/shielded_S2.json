@@ -1,0 +1,46 @@
+{
+  "name": "shielded_S2",
+  "description": "Shielded variant S2 (Sec. III B3, not adopted): rotation-limited correction with the excess-production term multiplied by (1-F1)^2",
+  "origin": {
+    "record": "v3verify/reports/revision_r2/declaration.json",
+    "variant": [
+      "shield",
+      2
+    ]
+  },
+  "spec": {
+    "bdelta": [
+      [
+        "T1",
+        "(1-Rf/(1-F1*Gk+Rf))*(Ret/(1+Ret))*tanh(Rf/0.01)*(c7*c7*((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf))*max(Rw*Rf*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf),0)/((1+c7*((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf))*(1+c7*max(Rw*Rf*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf),0)))*max(1,c6*(sqrt(I1)+abs(Rw*Rf))))-tanh(c7*c7*((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf))*max(-Rw*Rf*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf),0)*(1+((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf))*(1+F1*Gk))*(1+((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf)))/(1+c7*((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf))))/max(1,c6*sqrt(I1)))/max(1,c6*(1+c6)*I1)+tanh(abs(c3)*c4*F1*Gk)*c3*c4*(1-F1)*(1-F1)*(1-F1)*(1-F1)*(Ret/(c1+Ret))*(1-(1-(1-F1)*(Ret/(c1+Ret)))*(1-tanh(c4*abs(I1+I2)/max(1/c4,I1+abs(I2)))))*tanh(c4*sqrt(I1*abs(I2)))*max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0)*max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0)/(sqrt(1/(c4*c4)+max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0)*max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0))*(1+max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0))*sqrt(1+max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0))*(1+c5*Gp*Gp+c4*Gk*Gk)*max(1,c4*(1+abs(c3))*I1))"
+      ],
+      [
+        "T3",
+        "c0*F1*(Ret/(c1+Ret))*exp(-c2*abs(PoE-1))/max(1,(1+abs(c0))*(I1+abs(I2))+abs(c0)*abs(I1+I2))"
+      ],
+      [
+        "T4",
+        "-c0*F1*(Ret/(c1+Ret))*exp(-c2*abs(PoE-1))/max(1,(1+abs(c0))*(I1+abs(I2))+abs(c0)*abs(I1+I2))"
+      ]
+    ],
+    "constants": [
+      -3.00284,
+      3.76452,
+      4.6361,
+      0.54,
+      21.9938,
+      1.33944,
+      4.6,
+      88.0
+    ],
+    "gmax": 10.0,
+    "name": "finite_excess_matched_transport_r1_r2_shield2",
+    "r_max_factor": 5.0,
+    "rsource": [
+      [
+        "T1",
+        "(1+tanh(abs(c3)*c4*F1*Gk))*c3*c4*(1-F1)*(1-F1)*(1-F1)*(1-F1)*(Ret/(c1+Ret))*(1-(1-(1-F1)*(Ret/(c1+Ret)))*(1-tanh(c4*abs(I1+I2)/max(1/c4,I1+abs(I2)))))*tanh(c4*sqrt(I1*abs(I2)))*max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0)*max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0)/(sqrt(1/(c4*c4)+max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0)*max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0))*(1+max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0))*sqrt(1+max(PoE-1-(1+Gk*(1-tanh(Ksn/sqrt(I1))))/c2,0))*(1+c5*Gp*Gp+c4*Gk*Gk)*max(1,c4*(1+abs(c3))*I1))-(Rf/(1-F1*Gk+Rf))*(Ret/(1+Ret))*tanh(Rf/0.01)*(c7*c7*((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf))*max(Rw*Rf*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf),0)/((1+c7*((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf))*(1+c7*max(Rw*Rf*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf),0)))*max(1,c6*(sqrt(I1)+abs(Rw*Rf))))-tanh(c7*c7*((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf))*max(-Rw*Rf*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf),0)*(1+((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf))*(1+F1*Gk))*(1+((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf)))/(1+c7*((sqrt(I1)+Rw*Rf)*(sqrt(I1)+Rw*Rf)/(I1+Rw*Rw*Rf*Rf))))/max(1,c6*sqrt(I1)))/max(1,c6*(1+c6)*I1)"
+      ]
+    ]
+  }
+}

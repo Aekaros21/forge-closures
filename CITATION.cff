@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use these closures, scripts or cases, please cite the paper below."
+type: software
+title: "FORGE closures: explicit corrections to the k-omega SST turbulence model, with the cases to test them"
+authors:
+  - family-names: Charalampous
+    given-names: Charalampos
+    affiliation: "Department of Mechanical Engineering, Imperial College London"
+repository-code: "https://github.com/Aekaros21/forge-closures"
+license:
+  - GPL-3.0-or-later
+  - CC-BY-4.0
+keywords:
+  - turbulence modeling
+  - RANS
+  - k-omega SST
+  - OpenFOAM
+  - large language models
+  - genetic algorithm
+preferred-citation:
+  type: article
+  title: "Toward non-regressing turbulence closures from large language models: explicit corrections to SST tested on unseen flows"
+  authors:
+    - family-names: Charalampous
+      given-names: Charalampos
+      affiliation: "Department of Mechanical Engineering, Imperial College London"
+  journal: "Physics of Fluids"
+  status: submitted
+  year: 2026

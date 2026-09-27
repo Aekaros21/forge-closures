@@ -1,0 +1,34 @@
+{
+  "sst": {
+    "description": "Stock k-omega SST of OpenFOAM v2312 (baseline).",
+    "turbulenceProperties_sha256": "02ab442160dfc72a1d74dea5c21fc064c5c7c8a47cb98f6147b40d275eee8da0"
+  },
+  "invariant": {
+    "description": "Invariant correction (Sec. II): final equation of the invariant search, round 16.",
+    "turbulenceProperties_sha256": "ecebf2cb8b0dd2aead07d6307106e96e80a99ba617b4fceb3abb1842430f8bf5"
+  },
+  "flow_state": {
+    "description": "Flow-state correction (Sec. III): selected equation of the flow-state search.",
+    "turbulenceProperties_sha256": "6de9c8c3be9f3d3ea1b5baa2f8170e37c35d0b54a8d4ccd5cfe6d5cdf3dc0dba"
+  },
+  "rotation_limited": {
+    "description": "Rotation-limited correction (Sec. III B3, adopted): flow-state correction with the rotation term multiplied by tanh(Rf/0.01).",
+    "turbulenceProperties_sha256": "91515528e31251472682173d5a2909d41472cada8d5c977dfefc1f484d417bb4"
+  },
+  "shielded_S2": {
+    "description": "Shielded variant S2 (Sec. III B3, not adopted): rotation-limited correction with the excess-production term multiplied by (1-F1)^2",
+    "turbulenceProperties_sha256": "95073da2d2d18a4439cf2ebe76f6eb2579d36d6cd2f855125408f8e646c30e98"
+  },
+  "shielded_S4": {
+    "description": "Shielded variant S4 (Sec. III B3, not adopted): rotation-limited correction with the excess-production term multiplied by (1-F1)^4",
+    "turbulenceProperties_sha256": "124cb31ce0d571a151cc743055dea48d9e0652093c67e47e8c4ff74c6b9684b4"
+  },
+  "shielded_S8": {
+    "description": "Shielded variant S8 (Sec. III B3, not adopted): rotation-limited correction with the excess-production term multiplied by (1-F1)^8",
+    "turbulenceProperties_sha256": "8048b2482c89f3f40814cdc64e29d67c60dca39cbe2776a148f710a2e359299c"
+  },
+  "shielded_T1": {
+    "description": "Shielded variant T1 (Sec. III B3, not adopted): rotation-limited correction with the activation threshold of the excess-production term raised by 1",
+    "turbulenceProperties_sha256": "dcfd1b463c749a0024ac2e139fcab4ef0080d76873708b3cbeeddc22e4263219"
+  }
+}

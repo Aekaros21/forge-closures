@@ -1,0 +1,32 @@
+NOTE:  y is UP in the PIV datasets (elsewhere z is typically UP and y is SPANWISE)
+
+Units of x and y in mm (with x=0 mm at centroid, y=0 mm at bottom wall)
+  (height of model y = 6 inches = 152.4 mm)
+
+Units of velocity in m/s
+Units of TKE in (m/s)^2
+Units of turbulent stresses in (m/s)^2
+
+Note that the data in Centerline_FAITH_2Hz_4000samps_scalar were replaced on
+12/9/2014, in order to revise the axis to have y=0 mm at the bottom wall (like
+in the Centerline_FAITH_1kHz_3940samp_scalar data).
+Also please read the following notes from the experimentalist:
+
+For the 2 Hz data, the apparent data occurring inside of the body comes from 
+correlation noise on the body that gets averaged with the flow data. A mask was
+applied on the body, but that mask is based on the perspective of the camera 
+which is necessarily distorted from the “ideal” cosine curve. The distortion 
+could not be corrected because the model lies outside the calibration plane.
+
+The two frequency designations were acquired about a year apart. The 2 Hz are 
+from 11 Mpix cameras that operated at that speed. The experimentalists 
+subsequently acquired a high-speed PIV system that uses 4 Mpix cameras up to 
+730 Hz. They reduced the image size somewhat to get 1 kHz PIV frequency. The 
+laser power for the two systems was quite different. The High speed PIV used 
+a laser that gave about a 20 mJoule/pulse, whereas the low frequency system 
+used a laser with ~400 mJoule/pulse. To gain efficiency of light scattering, 
+the high speed cameras were moved upstream to increase the forward scatter 
+angle. Therefore the hill shadowed a portion of the laser light sheet in the 
+1 kHz data. This manifests itself as missing data near the surface, or 
+"shadowing."
+

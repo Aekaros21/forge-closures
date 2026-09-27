@@ -1,0 +1,5 @@
+# Python packages for reproduce/ and data/ (tested with Python 3.12, numpy 2.5, scipy 1.18 and fluidfoam 0.2.9)
+numpy>=1.26
+scipy>=1.11
+fluidfoam>=0.2.9
+# The search code in evaluation/ also uses cma and threadpoolctl; they are not needed to rerun the cases.

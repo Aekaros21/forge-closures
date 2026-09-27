@@ -1,0 +1,34 @@
+# Builds the closure library in the OpenFOAM v2312 image of OpenCFD, then runs the rotating channel at Ro = 0.10
+# with SST and the flow-state correction and checks the case error against the paper.
+name: reproduce
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  rotating-channel:
+    runs-on: ubuntu-latest
+    container: opencfd/openfoam-default:2312
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python packages
+        run: |
+          apt-get update -qq
+          apt-get install -y -qq python3 python3-pip python3-venv > /dev/null
+          python3 -m venv /opt/venv
+          /opt/venv/bin/pip install -q -r requirements.txt
+      - name: Build the closure library
+        run: |
+          set +eu; source /usr/lib/openfoam/openfoam2312/etc/bashrc; set -eu
+          ./closures/Allwmake
+      - name: Download the rotating-channel DNS
+        run: /opt/venv/bin/python data/fetch_data.py pch22
+      - name: Run and score the rotating channel at Ro = 0.10
+        run: |
+          set +eu; source /usr/lib/openfoam/openfoam2312/etc/bashrc; set -eu
+          /opt/venv/bin/python reproduce/run_cases.py --cases rotchan_ro10 --closures flow_state --tolerance 0.001

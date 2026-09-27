@@ -1,0 +1,4 @@
+#!/bin/sh
+# Build the closure library (libforgeClosures.so) into $FOAM_USER_LIBBIN; run in an OpenFOAM v2312 environment.
+cd "${0%/*}/kOmegaSSTBasis" || exit 1
+wmake libso
