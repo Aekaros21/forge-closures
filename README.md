@@ -13,7 +13,7 @@ flows it already predicts well. A genetic algorithm searched for them: large lan
 equations, whose coefficients were fitted and whose errors were measured in OpenFOAM simulations. This repository
 holds the resulting corrections and what is needed to rerun the paper's cases with them. The records of the
 searches and of the holdout verification, including the prompts and responses of the language models, are
-archived separately (Zenodo DOI to be added).
+archived separately on Zenodo: https://doi.org/10.5281/zenodo.22996003.
 
 ## Contents
 
@@ -158,7 +158,7 @@ improvement on SST. Two conventions of the paper's tables are applied in `score_
 generation and scoring, they contain the genetic algorithm (`evaluation/tedp/search/`) and the interface to the
 language models that proposed the equations (`evaluation/forge/proposer.py`). Running the search itself needs
 access to those models and a cluster scheduler and is not covered by the scripts here; its records are in the
-archive on Zenodo.
+archive on Zenodo (https://doi.org/10.5281/zenodo.22996003).
 
 ## Citation
 
