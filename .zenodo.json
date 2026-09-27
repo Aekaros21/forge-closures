@@ -1,0 +1,10 @@
+{
+  "title": "FORGE closures: explicit corrections to the k-omega SST turbulence model, with the cases to test them",
+  "upload_type": "software",
+  "creators": [
+    {"name": "Charalampous, Charalampos", "affiliation": "Imperial College London"}
+  ],
+  "description": "<p>The explicit corrections to the k-omega SST turbulence model presented in the paper <em>Toward non-regressing turbulence closures from large language models: explicit corrections to SST tested on unseen flows</em> (C. Charalampous, submitted to Physics of Fluids), the OpenFOAM v2312 library that evaluates them, the evaluation code of the paper, and scripts that build, run and score the paper's cases against the reference data. The corrections were found by a genetic algorithm in which large language models proposed equations, whose coefficients were fitted and whose errors were measured in OpenFOAM simulations.</p>",
+  "license": "gpl-3.0-or-later",
+  "keywords": ["turbulence modeling", "RANS", "k-omega SST", "OpenFOAM", "large language models", "genetic algorithm"]
+}

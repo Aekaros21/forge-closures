@@ -1,5 +1,7 @@
 # FORGE closures
 
+[![reproduce](https://github.com/Aekaros21/forge-closures/actions/workflows/reproduce.yml/badge.svg)](https://github.com/Aekaros21/forge-closures/actions/workflows/reproduce.yml)
+
 Explicit corrections to the k–ω SST turbulence model, the OpenFOAM library that runs them, and the cases and
 scripts to test them. This repository accompanies
 
