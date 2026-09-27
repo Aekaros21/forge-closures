@@ -1,6 +1,6 @@
 # FORGE closures
 
-[![reproduce](https://github.com/Aekaros21/forge-closures/actions/workflows/reproduce.yml/badge.svg)](https://github.com/Aekaros21/forge-closures/actions/workflows/reproduce.yml)
+[![reproduce](https://github.com/Aekaros21/forge-closures/actions/workflows/reproduce.yml/badge.svg)](https://github.com/Aekaros21/forge-closures/actions/workflows/reproduce.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22996126.svg)](https://doi.org/10.5281/zenodo.22996126)
 
 Explicit corrections to the k–ω SST turbulence model, the OpenFOAM library that runs them, and the cases and
 scripts to test them. This repository accompanies
@@ -162,7 +162,9 @@ archive on Zenodo (https://doi.org/10.5281/zenodo.22996003).
 
 ## Citation
 
-Please cite the paper when using the closures, the scripts or the case set (see also `CITATION.cff`):
+Please cite the paper when using the closures, the scripts or the case set (see also `CITATION.cff`). The code
+is archived on Zenodo at https://doi.org/10.5281/zenodo.22996126 (all versions; version 1.0, as submitted with
+the paper, is https://doi.org/10.5281/zenodo.22996127).
 
 ```bibtex
 @article{charalampous2026forge,

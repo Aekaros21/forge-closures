@@ -6,6 +6,7 @@ authors:
   - family-names: Charalampous
     given-names: Charalampos
     affiliation: "Department of Mechanical Engineering, Imperial College London"
+doi: 10.5281/zenodo.22996126
 repository-code: "https://github.com/Aekaros21/forge-closures"
 license:
   - GPL-3.0-or-later
