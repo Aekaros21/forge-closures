@@ -13,13 +13,14 @@ recompiled for a new closure, and the dictionaries below are the complete defini
 | `flow_state` | Flow-state correction | III | Selected equation of the flow-state search; adds the pressure and turbulent-kinetic-energy gradients and the frame rotation to the inputs |
 | `rotation_limited` | Rotation-limited correction | III B 3 | The flow-state correction with its rotation term multiplied by tanh(R_f/0.01); adopted |
 | `shielded_S2`, `shielded_S4`, `shielded_S8`, `shielded_T1` | Shielded variants | III B 3 | The rotation-limited correction with its excess-production term multiplied by (1−F₁)², (1−F₁)⁴ or (1−F₁)⁸, which removes it in the inner part of boundary layers, or with the threshold at which that term acts raised by 1 (T1); fitted to the near-stall airfoil and not adopted |
+| `qcr2000` | QCR2000 | V | The quadratic constitutive relation of Spalart (2000) applied to the SST stress with C_cr1 = 0.3, a closure the corrections are compared with; it is exactly the T2 term of the model with the coefficient limit removed (gMax = 10³⁰), and uses the variable `phiDkPk` ([closures/comparators/README.md](../closures/comparators/README.md)) |
 
 ## Files
 
 - `<closure>/turbulenceProperties` is the dictionary a case reads, with the fitted coefficients written into
   the expressions. `reproduce/make_case.py` copies it into each case it builds; `index.json` lists its SHA-256.
 - `<closure>.json` holds the same equation as the search recorded it: the expressions with the symbolic
-  coefficients `c0`…`c7`, their fitted values, and the campaign it came from. Table VII of the paper lists the
+  coefficients `c0`…`c7`, their fitted values, and the campaign it came from. Table X of the paper lists the
   coefficients.
 
 In `kOmegaSSTBasisCoeffs`, `bDelta` lists the terms g_n T^(n) of the anisotropic stress and `rSource` the terms

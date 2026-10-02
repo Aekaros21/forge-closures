@@ -1,0 +1,16 @@
+#!/bin/sh
+# Build the libraries of the compared closures into $FOAM_USER_LIBBIN: libkOmegaSSTRC.so (SST-RC),
+# libkOmegaEARSM.so (EARSM) and libkOmegaSSTAutoTurb.so (AutoTurb). With -test, also build the unit executables
+# into $FOAM_USER_APPBIN. Run in an OpenFOAM v2312 environment. QCR2000 needs no library of its own: it runs in
+# libforgeClosures.so (../Allwmake).
+cd "${0%/*}" || exit 1
+set -e
+for model in sstrc earsm autoturb; do
+    (cd "$model" && wmake libso)
+done
+if [ "$1" = "-test" ]; then
+    for app in sstrc_unit sstrc_dsdt ../../tests/comparators/earsm/testEARSM ../../tests/comparators/earsm/testEARSMLoad \
+               ../../tests/comparators/autoturb/testAutoTurbLoad ../../tests/comparators/autoturb/testAutoTurbSource; do
+        (cd "$app" && wmake)
+    done
+fi

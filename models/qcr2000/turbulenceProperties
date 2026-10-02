@@ -1,0 +1,34 @@
+FoamFile { version 2.0; format ascii; class dictionary; object turbulenceProperties; }
+simulationType RAS;
+RAS
+{
+    RASModel kOmegaSSTBasis;
+    turbulence on;
+    printCoeffs off;
+    kOmegaSSTBasisCoeffs
+    {
+        coupledStressBoundary true;
+        mode            expressions;
+        bDelta
+        {
+            terms
+            (
+            (T2 "(((0.3*0.09)*(1000000000000.0*((1000000000000.0*(PoE+max(0.0,(((1000000000000.0*(1.0-phiDkPk))/(1000000000000.0*phiDkPk))-10.0))))/(1000000000000.0*I1))))/(1000000000000.0*sqrt((I1-I2))))")
+            );
+        }
+        rSource
+        {
+            terms
+            (
+
+            );
+        }
+        gMax            1e+30;
+        rMaxFactor      5.0;
+        bDeltaRelax     0.5;
+        rampIterations  200;
+        nonlinearProduction on;
+        realizabilityClip   on;
+        a1Expr          "";
+    }
+}

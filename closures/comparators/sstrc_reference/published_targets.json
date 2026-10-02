@@ -1,0 +1,544 @@
+{
+ "schema": "sstrc_published_targets/1",
+ "model": "SST-RC (SST-CC) of Smirnov and Menter (2009), c_r1 = 1, c_r2 = 2, c_r3 = 1, f_r1 in [0, 1.25]",
+ "source": {
+  "citation": "smirnov2009",
+  "reference": "P. E. Smirnov and F. R. Menter, J. Turbomach. 131(4), 041010 (2009)",
+  "figure": "Fig. 1, p. 041010-3",
+  "pdf": "archive/paper_pof/literature/pdfs/smirnov2009.pdf",
+  "pdf_sha256": "0c1eda59b1f1c6c8de797fab255fbc449b38838c3cf393630e9a387b5d7e34fd",
+  "method": "vector polylines read from pdftocairo -svg of PDF page 3 (no raster tracing)",
+  "conditions": "fully developed plane channel, spanwise rotation, Re = U_m H/nu = 5800 (H channel width), Ro = 2 Omega h/U_m = Omega H/U_m (Kristoffersen and Andersson 1993); SST-CC solved with ANSYS CFX 11, y+ < 1, grid-independent (Sec. 4.1, pp. 041010-2/3)"
+ },
+ "orientation": "Fig. 1 y/H = 0 is the pressure (destabilised, high-friction) wall. In this work the flow is +x, Omega = +z, the Coriolis acceleration -2 Omega x U points to -y, so y/H = 0 maps to bottomWall (y = -h) and y_case/h = 2 y/H - 1.",
+ "case_match": "tedp.holdout_cases.rotchan: Re = U_m h/nu = 2900 (= 5800 on the width), Ro = 2 Omega h/U_m, Omega = (0, 0, Ro/2) with h = U_m = 1; frameOmega of the comparator = the same vector",
+ "primary": [
+  "wall_shear_ratio_pressure_over_suction",
+  "velocity_maximum_y_over_H",
+  "velocity_asymmetry_dU"
+ ],
+ "check_tool": "python src/comparators/sstrc_reference/check_targets.py <model result.json or case dir> <SST result.json or case dir> --out <report.json>  (exit 0 = primary criteria met)",
+ "rotating_channel": {
+  "ro10": {
+   "case_id": "rotchan_ro10",
+   "Ro": 0.1,
+   "frame_omega": [
+    0.0,
+    0.0,
+    0.05
+   ],
+   "wall_shear_ratio_pressure_over_suction": {
+    "value": 1.4649645570473961,
+    "accept": [
+     1.3477673924836044,
+     1.5821617216111878
+    ],
+    "observable": "wall_friction_ratio = wall_cf_bottom/wall_cf_top (bottomWall, y = -h, is the pressure side)",
+    "derivation": "tau_p/tau_s = y0/(H - y0): the total shear stress of a fully developed channel is linear and vanishes where dU/dy = 0, which for an eddy-viscosity model is where the modelled Reynolds stress of Fig. 1(b) crosses zero (y0, measured from the pressure wall)"
+   },
+   "velocity_maximum_y_over_H": {
+    "value": 0.5943146536768755,
+    "accept": [
+     0.5750262739887306,
+     0.6136030333650204
+    ],
+    "cross_check_velocity_maximum": 0.5955702956720672,
+    "case_coordinate": {
+     "value": 0.18862930735375105,
+     "note": "y/h in the case (walls at -1 and +1), = 2 y/H - 1"
+    }
+   },
+   "velocity_asymmetry_dU": {
+    "value": 0.05211879999044733,
+    "accept": [
+     0.03994929599121154,
+     0.06428830398968312
+    ],
+    "definition": "[U(0.75 H) - U(0.25 H)]/U_m, y from the pressure wall (case y/h = +0.5 and -0.5)"
+   },
+   "u_max_over_Um": {
+    "value": 1.1890031123604363,
+    "accept": [
+     1.177113081236832,
+     1.2008931434840406
+    ],
+    "role": "secondary"
+   },
+   "profile_rms_max": {
+    "value": 0.012,
+    "definition": "RMS over 0.05 <= y/H <= 0.95 of U_case(y)/U_m - U_SST-CC(y)/U_m, published profile linearly interpolated",
+    "role": "secondary"
+   },
+   "published_profile": {
+    "y_over_H": [
+     0.05322,
+     0.058453,
+     0.064537,
+     0.070918,
+     0.077853,
+     0.085638,
+     0.094316,
+     0.103591,
+     0.114013,
+     0.125585,
+     0.138007,
+     0.151919,
+     0.166979,
+     0.18374,
+     0.201991,
+     0.222241,
+     0.244491,
+     0.268825,
+     0.295712,
+     0.325236,
+     0.357951,
+     0.393517,
+     0.433166,
+     0.476261,
+     0.524036,
+     0.567132,
+     0.606483,
+     0.642347,
+     0.674764,
+     0.704586,
+     0.731473,
+     0.755807,
+     0.778057,
+     0.798307,
+     0.816558,
+     0.833319,
+     0.848379,
+     0.86229,
+     0.874713,
+     0.886284,
+     0.896409,
+     0.905981,
+     0.91466,
+     0.92219,
+     0.929422,
+     0.935761,
+     0.941547,
+     0.947035
+    ],
+    "u_over_Um": [
+     0.752426,
+     0.775805,
+     0.798154,
+     0.820503,
+     0.841823,
+     0.863143,
+     0.884463,
+     0.904607,
+     0.924016,
+     0.944306,
+     0.963568,
+     0.98283,
+     1.001062,
+     1.020323,
+     1.038556,
+     1.055906,
+     1.073109,
+     1.090312,
+     1.106633,
+     1.122807,
+     1.137069,
+     1.151184,
+     1.164418,
+     1.174563,
+     1.183679,
+     1.187796,
+     1.188825,
+     1.185738,
+     1.17868,
+     1.166476,
+     1.149273,
+     1.122807,
+     1.091341,
+     1.058847,
+     1.026352,
+     0.995033,
+     0.963568,
+     0.932103,
+     0.901666,
+     0.872259,
+     0.841823,
+     0.812416,
+     0.783892,
+     0.754485,
+     0.725078,
+     0.6967,
+     0.667293,
+     0.637886
+    ]
+   }
+  },
+  "ro50": {
+   "case_id": "rotchan_ro50",
+   "Ro": 0.5,
+   "frame_omega": [
+    0.0,
+    0.0,
+    0.25
+   ],
+   "wall_shear_ratio_pressure_over_suction": {
+    "value": 2.1159539906694262,
+    "accept": [
+     1.9466776714158722,
+     2.2852303099229805
+    ],
+    "observable": "wall_friction_ratio = wall_cf_bottom/wall_cf_top (bottomWall, y = -h, is the pressure side)",
+    "derivation": "tau_p/tau_s = y0/(H - y0): the total shear stress of a fully developed channel is linear and vanishes where dU/dy = 0, which for an eddy-viscosity model is where the modelled Reynolds stress of Fig. 1(b) crosses zero (y0, measured from the pressure wall)"
+   },
+   "velocity_maximum_y_over_H": {
+    "value": 0.6790709994452897,
+    "accept": [
+     0.6616363132726765,
+     0.6965056856179029
+    ],
+    "cross_check_velocity_maximum": 0.6787169330549578,
+    "case_coordinate": {
+     "value": 0.3581419988905794,
+     "note": "y/h in the case (walls at -1 and +1), = 2 y/H - 1"
+    }
+   },
+   "velocity_asymmetry_dU": {
+    "value": 0.27730954189461554,
+    "accept": [
+     0.2471247785430463,
+     0.30749430524618476
+    ],
+    "definition": "[U(0.75 H) - U(0.25 H)]/U_m, y from the pressure wall (case y/h = +0.5 and -0.5)"
+   },
+   "u_max_over_Um": {
+    "value": 1.3091980246499826,
+    "accept": [
+     1.2961060444034826,
+     1.3222900048964825
+    ],
+    "role": "secondary"
+   },
+   "profile_rms_max": {
+    "value": 0.012,
+    "definition": "RMS over 0.05 <= y/H <= 0.95 of U_case(y)/U_m - U_SST-CC(y)/U_m, published profile linearly interpolated",
+    "role": "secondary"
+   },
+   "published_profile": {
+    "y_over_H": [
+     0.05322,
+     0.058453,
+     0.064537,
+     0.070918,
+     0.077853,
+     0.085638,
+     0.094316,
+     0.103591,
+     0.114013,
+     0.125585,
+     0.138007,
+     0.151919,
+     0.166979,
+     0.18374,
+     0.201991,
+     0.222241,
+     0.244491,
+     0.268825,
+     0.295712,
+     0.325236,
+     0.357951,
+     0.393517,
+     0.433166,
+     0.476261,
+     0.524036,
+     0.567132,
+     0.606483,
+     0.642347,
+     0.674764,
+     0.704586,
+     0.731473,
+     0.755807,
+     0.778057,
+     0.798307,
+     0.816558,
+     0.833319,
+     0.848379,
+     0.86229,
+     0.874713,
+     0.886284,
+     0.896409,
+     0.905981,
+     0.91466,
+     0.92219,
+     0.929422,
+     0.935761,
+     0.941547,
+     0.947035
+    ],
+    "u_over_Um": [
+     0.686162,
+     0.706453,
+     0.726744,
+     0.746006,
+     0.765267,
+     0.784676,
+     0.802908,
+     0.82217,
+     0.840402,
+     0.858634,
+     0.876867,
+     0.895099,
+     0.912449,
+     0.930681,
+     0.948914,
+     0.967293,
+     0.986554,
+     1.007875,
+     1.031106,
+     1.057572,
+     1.08595,
+     1.117415,
+     1.151822,
+     1.188433,
+     1.227986,
+     1.264597,
+     1.291946,
+     1.305032,
+     1.309149,
+     1.30709,
+     1.294886,
+     1.26048,
+     1.211812,
+     1.160056,
+     1.108299,
+     1.057572,
+     1.007875,
+     0.959059,
+     0.912449,
+     0.866721,
+     0.823199,
+     0.780559,
+     0.739977,
+     0.700425,
+     0.659843,
+     0.620144,
+     0.579709,
+     0.541039
+    ]
+   }
+  }
+ },
+ "other_published_rotation_numbers": {
+  "0.00": {
+   "wall_shear_ratio": 1.0023045283586316,
+   "velocity_maximum_y_over_H": 0.500575468997346,
+   "velocity_asymmetry_dU": 0.00019793405524670682,
+   "u_max_over_Um": 1.1643803303179416
+  },
+  "0.01": {
+   "wall_shear_ratio": 1.057705458658081,
+   "velocity_maximum_y_over_H": 0.5140217975355212,
+   "velocity_asymmetry_dU": 0.009315873440148836,
+   "u_max_over_Um": 1.1652057748702147
+  },
+  "0.05": {
+   "wall_shear_ratio": 1.2553152257286568,
+   "velocity_maximum_y_over_H": 0.5566030022801288,
+   "velocity_asymmetry_dU": 0.029570705424841748,
+   "u_max_over_Um": 1.1765857096497405
+  },
+  "0.10": {
+   "wall_shear_ratio": 1.4649645570473961,
+   "velocity_maximum_y_over_H": 0.5943146536768755,
+   "velocity_asymmetry_dU": 0.05211879999044733,
+   "u_max_over_Um": 1.1890031123604363
+  },
+  "0.15": {
+   "wall_shear_ratio": 1.641532330827238,
+   "velocity_maximum_y_over_H": 0.6214318528947045,
+   "velocity_asymmetry_dU": 0.07703133423454056,
+   "u_max_over_Um": 1.1943723609587305
+  },
+  "0.20": {
+   "wall_shear_ratio": 1.8009571303492284,
+   "velocity_maximum_y_over_H": 0.6429791840922184,
+   "velocity_asymmetry_dU": 0.10208828295508221,
+   "u_max_over_Um": 1.2074850580071241
+  },
+  "0.50": {
+   "wall_shear_ratio": 2.1159539906694262,
+   "velocity_maximum_y_over_H": 0.6790709994452897,
+   "velocity_asymmetry_dU": 0.27730954189461554,
+   "u_max_over_Um": 1.3091980246499826
+  }
+ },
+ "sst_control": {
+  "note": "the published SST (no correction) profiles are identical for all Ro (symmetric): the preflight SST baseline must give wall_friction_ratio = 1 within 1e-3 at every Ro",
+  "published_max_asymmetry_y_over_H": 0.0006707271523701541,
+  "this_work_sst_wall_friction_ratio": {
+   "rotchan_ro10": 0.9999997654622291,
+   "rotchan_ro50": 0.999970683207263,
+   "source": "results/forge-v2-hx1-011/baseline_qualification.json"
+  }
+ },
+ "tolerance_rationale": {
+  "reading": "two independent readings of y0 (velocity maximum of Fig. 1a by a three-point parabola, zero of the Reynolds stress of Fig. 1b) agree within 0.0034 H over all seven Ro; the bulk velocity of every digitized profile is 1 within 0.04 %; the published SST profiles are symmetric within 0.0007 H. Reading uncertainty of the wall-shear ratio: 1.2 % (Ro 0.10), 1.4 % (Ro 0.50).",
+  "code_to_code": "SST at Ro = 0 of this work (OpenFOAM v2312, 256 cells) against the published SST profile (ANSYS CFX 11): U_max 1.1600 vs 1.1638 (-0.33 %), RMS profile difference 0.0039 U_m over 0.05-0.95 H, near-wall gradient about 4 % higher; the two walls can be affected differently once rotation makes them asymmetric, so 5 % is allowed on the ratio.",
+  "band": "ratio band +-8%: about 1.5 x the quadrature sum of reading and code-to-code allowances; it still rejects the published responses at the neighbouring rotation numbers (Ro 0.05 -> 1.26 and Ro 0.15 -> 1.64 around Ro 0.10; Ro 0.20 -> 1.80 below Ro 0.50), i.e. a frame rate wrong by a factor 1.5-2, the uncorrected SST (1.0) and an inverted sign (< 1). velocity_maximum band = the same band mapped through ratio = y0/(1 - y0). dU band = 0.008 U_m + 8 %: rejects Ro 0.05 (0.030) and Ro 0.15 (0.077) around Ro 0.10. profile_rms_max 0.012 = 3 x the SST code-to-code RMS."
+ },
+ "flat_plate": {
+  "case_id": "tmr_plate_137x97",
+  "f_r1_expected": 1.0,
+  "criterion": "drag_coefficient and wall_cf at every station with x >= 0.1 of SST-RC within 0.1 % (relative, scale floor 1e-5) of the SST baseline of the same case and protocol; wall_cf_rms (within 0.1 %) and the leading-edge stations x < 0.1 (within 1 %) are reported, not pass/fail, because the leading-edge strain legitimately gives f_r1 < 1 there",
+  "check": "python src/comparators/sstrc_reference/check_targets.py MODEL_result.json SST_result.json",
+  "relative_tolerance": 0.001,
+  "scale_floor": 1e-05,
+  "x_min": 0.1,
+  "leading_edge_relative_tolerance": 0.01,
+  "basis": "thin shear flow without curvature: r* = 1, r~ = 0 -> f_rotation = f_r1 = 1 ([SM09] Eq. (1); [SS97] p. 301 \"f_r1(1, 0) = 1\"; p. 300 \"near a flat surface |r~| << 1\"); 0.1 % is the relative tolerance the harness applies to wall_cf and drag_coefficient (required_observables)",
+  "a_priori": {
+   "source": "data/mcconkey/foam/komegasst/fp/flatplate/35500",
+   "grid": [
+    385,
+    12138
+   ],
+   "model": "reference.py, inertial frame, published constants",
+   "weight": "nu_t S^2 x cell area",
+   "regions": {
+    "plate x > 0": {
+     "production_weighted_mean_fr1_minus_1": -0.0002135846856445038,
+     "production_weighted_mean_abs": 0.00028174550094595927
+    },
+    "x >= 0.1": {
+     "production_weighted_mean_fr1_minus_1": -0.0002011344855266495,
+     "production_weighted_mean_abs": 0.00027116581252374937
+    },
+    "0.5 <= x <= 2": {
+     "production_weighted_mean_fr1_minus_1": -0.00016949768051721688,
+     "production_weighted_mean_abs": 0.0002597069535276842
+    }
+   },
+   "stations": [
+    {
+     "x": 0.001985749907532468,
+     "production_weighted_mean_fr1_minus_1": -0.0024569792741007666,
+     "max_abs_fr1_minus_1_where_P_above_1pct": 0.3081956072894292,
+     "r_star_range": [
+      0.9688461621816119,
+      0.999991540309373
+     ],
+     "r_tilde_range": [
+      8.939975223527443e-07,
+      0.07071468263997431
+     ]
+    },
+    {
+     "x": 0.009979774555065005,
+     "production_weighted_mean_fr1_minus_1": -0.0009064152455931186,
+     "max_abs_fr1_minus_1_where_P_above_1pct": 0.0028955065317044504,
+     "r_star_range": [
+      0.9985801987235353,
+      0.9999795879772133
+     ],
+     "r_tilde_range": [
+      3.155886607667974e-06,
+      0.00036893631644066105
+     ]
+    },
+    {
+     "x": 0.050012963000000264,
+     "production_weighted_mean_fr1_minus_1": -0.00046934926950687004,
+     "max_abs_fr1_minus_1_where_P_above_1pct": 0.005569307798236833,
+     "r_star_range": [
+      0.9998307296866276,
+      0.9999999911992712
+     ],
+     "r_tilde_range": [
+      1.9761470035530608e-10,
+      0.0013607594733490162
+     ]
+    },
+    {
+     "x": 0.10000068000000066,
+     "production_weighted_mean_fr1_minus_1": -0.00038249302194887417,
+     "max_abs_fr1_minus_1_where_P_above_1pct": 0.006126839342479151,
+     "r_star_range": [
+      0.9998708558310125,
+      0.9999999975331635
+     ],
+     "r_tilde_range": [
+      5.6310389444895295e-11,
+      0.0015084531196279242
+     ]
+    },
+    {
+     "x": 0.2499669850129873,
+     "production_weighted_mean_fr1_minus_1": -0.0002991513683242118,
+     "max_abs_fr1_minus_1_where_P_above_1pct": 0.007140944755681389,
+     "r_star_range": [
+      0.9999004646837936,
+      0.9999999995878609
+     ],
+     "r_tilde_range": [
+      -4.7609485478127523e-11,
+      0.0017717309769846785
+     ]
+    },
+    {
+     "x": 0.49993669166233695,
+     "production_weighted_mean_fr1_minus_1": -0.0002651104698631365,
+     "max_abs_fr1_minus_1_where_P_above_1pct": 0.008533143264345622,
+     "r_star_range": [
+      0.9999118644233947,
+      0.9999999998885879
+     ],
+     "r_tilde_range": [
+      2.9484134619021976e-12,
+      0.002123015330745862
+     ]
+    },
+    {
+     "x": 0.9699112645974071,
+     "production_weighted_mean_fr1_minus_1": -0.00021932511952828812,
+     "max_abs_fr1_minus_1_where_P_above_1pct": 0.0078059330894511,
+     "r_star_range": [
+      0.9999249481494115,
+      0.9999999999642586
+     ],
+     "r_tilde_range": [
+      1.0792301668868814e-12,
+      0.0019428997191549013
+     ]
+    },
+    {
+     "x": 1.499787100000001,
+     "production_weighted_mean_fr1_minus_1": -0.0001911065169334172,
+     "max_abs_fr1_minus_1_where_P_above_1pct": 0.010193439375281388,
+     "r_star_range": [
+      0.9999170457232189,
+      0.9999999999864866
+     ],
+     "r_tilde_range": [
+      -0.0014890670811278492,
+      0.0025385425390217972
+     ]
+    },
+    {
+     "x": 1.899856,
+     "production_weighted_mean_fr1_minus_1": -0.0001776253592931797,
+     "max_abs_fr1_minus_1_where_P_above_1pct": 0.013182470846163419,
+     "r_star_range": [
+      0.999946740215816,
+      0.9999999999918493
+     ],
+     "r_tilde_range": [
+      2.7396867818318546e-13,
+      0.0032824369767242246
+     ]
+    }
+   ]
+  },
+  "a_priori_summary": "f_r1 evaluated by reference.py on the converged SST solution of the same TMR plate (12138 x 385 cells, data/mcconkey): production-weighted mean f_r1 - 1 = -2.1e-04 over the plate, -2.2e-04 at x = 0.97, but -2.5e-03 at x = 0.002 (leading-edge strain, r* < 1): a production change of about 0.02 % downstream, hence the 0.1 % band with x >= 0.1"
+ },
+ "not_used": {
+  "shur2000": "Shur et al. (2000) Figs. 3, 5, 6 (pp. 786-787) are the SA-based SARC model (c_r2 = 12, no limiter, D^2 = (S^2 + Omega^2)/2); not a target for SST-RC."
+ }
+}

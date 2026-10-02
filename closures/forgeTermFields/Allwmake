@@ -1,0 +1,8 @@
+#!/bin/sh
+# Build the term-field utility forgeTermFields and its algebra test testTermAlgebra into $FOAM_USER_APPBIN; run in
+# an OpenFOAM v2312 environment. Both include the sources of the closure library (../kOmegaSSTBasis) and do not
+# rebuild or load it.
+cd "${0%/*}" || exit 1
+set -e
+wmake
+(cd testTermAlgebra && wmake)

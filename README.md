@@ -11,25 +11,30 @@ scripts to test them. This repository accompanies
 The paper seeks corrections to SST that lower its error on flows it predicts poorly without raising the error on
 flows it already predicts well. A genetic algorithm searched for them: large language models proposed new
 equations, whose coefficients were fitted and whose errors were measured in OpenFOAM simulations. This repository
-holds the resulting corrections and what is needed to rerun the paper's cases with them. The records of the
-searches and of the holdout verification, including the prompts and responses of the language models, are
-archived separately on Zenodo: https://doi.org/10.5281/zenodo.22996003.
+holds the resulting corrections and what is needed to rerun the paper's cases with them. It also holds the
+implementations of the four closures that the paper compares with the corrections (Sec. V) and the utility that
+evaluates each term of a correction in a converged solution (Sec. IV). The records of the searches, of the holdout
+verification, of the term ablation and of the comparison, including the prompts and responses of the language
+models, are archived separately on Zenodo: https://doi.org/10.5281/zenodo.22996003.
 
 ## Contents
 
 | Folder | Content |
 |---|---|
 | [`closures/`](closures) | `kOmegaSSTBasis`, the OpenFOAM v2312 turbulence model that adds a correction to SST (C++ source of `libforgeClosures.so`) |
-| [`models/`](models) | The corrections of the paper as OpenFOAM dictionaries ([models/README.md](models/README.md)) |
+| [`closures/comparators/`](closures/comparators) | The closures compared in Sec. V: QCR2000, SST-RC, EARSM and AutoTurb, with their reference implementations and verification ([closures/comparators/README.md](closures/comparators/README.md)) |
+| [`closures/forgeTermFields/`](closures/forgeTermFields) | The utility that evaluates each term of a correction in a converged solution (Sec. IV, Fig. 15) |
+| [`models/`](models) | The corrections of the paper, and QCR2000, as OpenFOAM dictionaries ([models/README.md](models/README.md)) |
 | [`reproduce/`](reproduce) | Case definitions, the paper's case errors, and scripts that build, run and score the cases |
-| [`evaluation/`](evaluation) | The evaluation code of the paper, unchanged: case generation, scoring and the search itself |
+| [`evaluation/`](evaluation) | The evaluation code of the paper, unchanged: case generation, scoring, the search itself, and the support for compiled closures |
+| [`tests/`](tests) | Unit tests of the compared closures, the evaluation support for them and the case conversion (no simulation) |
 | [`data/`](data) | Grids and reference data, their checksums, and the script that downloads the rest ([data/README.md](data/README.md)) |
 | [`cases/faith/`](cases/faith) | Reference data of the FAITH hill |
 
 ## Requirements
 
 - OpenFOAM v2312 (ESI-OpenCFD, https://www.openfoam.com), with which every simulation of the paper was run.
-- Python 3.10 or later with numpy, scipy and fluidfoam (`requirements.txt`).
+- Python 3.10 or later with numpy, scipy and fluidfoam (`requirements.txt`), and pytest for the unit tests.
 - For the square ducts, the Kaggle command-line client; for the Ahmed bodies, the diffuser and the wing–body
   junction, data from ERCOFTAC ([data/README.md](data/README.md)).
 
@@ -106,8 +111,8 @@ workstation. The domain decomposition then differs from the paper's, so the erro
 
 The table lists the case errors reproduced with `reproduce/run_cases.py` on a laptop (OpenFOAM v2312 on
 Pop!_OS 24.04, which is based on Ubuntu 24.04) next to the paper's values, which were computed on a cluster
-(`reproduce/expected.json`). The development values are those behind the family averages of Tables II and IV of
-the paper, the holdout values those of Table V, and the rotation-limited values those of Sec. III B 3 and Table VI.
+(`reproduce/expected.json`). The development values are those behind the family averages of Tables III and V of
+the paper, the holdout values those of Table VI, and the rotation-limited values those of Sec. III B 3 and Table VII.
 
 | Case | Invariant | Flow-state | Rotation-limited |
 |---|---|---|---|
@@ -152,19 +157,90 @@ improvement on SST. Two conventions of the paper's tables are applied in `score_
   before the holdout used 1.72, the zero crossing of the measured skin friction; `reproduce/cases.json` records
   the change.
 
+## Compared closures
+
+Section V of the paper compares the corrections with QCR2000 (Spalart, 2000), SST-RC (Smirnov and Menter, 2009), the
+EARSM of Wallin and Johansson in the form of Menter, Garbaruk and Egorov (2012), and AutoTurb (Zhang et al., 2025),
+each with its published equations and coefficients; the fifth closure of Sec. V, the correction of Rincón et al.,
+ran with its authors' library, which is not included here. QCR2000 is exactly a term of `kOmegaSSTBasis` and runs as
+the dictionary `models/qcr2000`. The other three are OpenFOAM v2312 turbulence models in their own libraries, built
+by `closures/comparators/Allwmake`; their sources are those that ran in the paper, unchanged, and
+`closures/comparators/comparator_models.json` records their coefficients and source digests. Each implementation was
+checked without simulation against an independent evaluation of the published equations: QCR2000 to a relative
+difference of 5×10⁻¹¹ on 20,000 velocity gradients, the rotation function of SST-RC to 4×10⁻¹⁶ at 77 manufactured
+states, the EARSM stress to 10⁻¹² on 235 states and the AutoTurb source to 10⁻¹² of the magnitude of its terms on
+27,474 states. Before the comparison, each closure was also run on the cluster against published or expected
+behaviour on the square duct, the flat plate, the rotating channels or the periodic hill; those records are in the
+archive. [closures/comparators/README.md](closures/comparators/README.md) gives the equations as implemented, the
+departures from the publications that leave the converged models unchanged, and the tests.
+
+```sh
+./closures/comparators/Allwmake                                         # libkOmegaSSTRC, libkOmegaEARSM, libkOmegaSSTAutoTurb
+python3 reproduce/make_case.py squareDuct_Re_2000 qcr2000              # QCR2000, as a correction
+python3 reproduce/make_case.py rotchan_ro10 sst --name rotchan_ro10_sstrc
+python3 reproduce/use_comparator.py runs/rotchan_ro10_sstrc sstrc     # SST-RC, EARSM or AutoTurb
+runs/rotchan_ro10_sstrc/Allrun
+python3 reproduce/score_case.py runs/rotchan_ro10_sstrc runs/rotchan_ro10_sst
+```
+
+`use_comparator.py` makes the case of a compiled closure as the paper's comparison did: the SST case of the same
+flow with its turbulence dictionary and library list changed, and nothing else.
+
+## Term fields
+
+`closures/forgeTermFields` is an OpenFOAM v2312 utility that evaluates, in a converged solution of a correction, the
+stress and production of each of its three terms: the normal-stress term, the excess-production term and the
+rotation term (Sec. IV of the paper, Fig. 15). It reads the velocity, pressure, k, ω and ν_t of the solution,
+rebuilds the inputs of the correction with the sources of `libforgeClosures.so`, which it includes without
+rebuilding or loading the library, and splits the correction with the same limits as the library. The terms are
+listed in `system/termFieldsDict`, written by `termfields_dict.py`; the utility stops if the full correction listed
+there differs from that in the case's `constant/turbulenceProperties`, and it compares the stress it rebuilds with
+the `nonlinearStress` field the solver wrote. `termfields_dict.py check` verifies the split without a case: on
+20,000 random states the terms add up to the full correction to within 10⁻¹⁵ of its magnitude, and the compiled
+algebra of the utility (`testTermAlgebra`) agrees with a NumPy twin to within 10⁻¹⁵. `term_fields.py` is the script
+that computed the term fields of Fig. 15 from the paper's stored solutions, with a second, independent evaluation in
+NumPy compared cell by cell; it is included as it ran, and its paths refer to the paper's working folders.
+
+```sh
+./closures/forgeTermFields/Allwmake                                      # forgeTermFields and testTermAlgebra
+python3 closures/forgeTermFields/termfields_dict.py dict --model rotation_limited \
+    --out runs/nasa_hump_fine_rotation_limited/system/termFieldsDict      # after the run of that case
+(cd runs/nasa_hump_fine_rotation_limited && forgeTermFields -latestTime)
+python3 closures/forgeTermFields/termfields_dict.py check --binary "$FOAM_USER_APPBIN/testTermAlgebra" --work /tmp/tf
+```
+
 ## Evaluation code
 
 `evaluation/forge` and `evaluation/tedp` are the Python packages of the paper, copied unchanged. Besides case
 generation and scoring, they contain the genetic algorithm (`evaluation/tedp/search/`) and the interface to the
-language models that proposed the equations (`evaluation/forge/proposer.py`). Running the search itself needs
-access to those models and a cluster scheduler and is not covered by the scripts here; its records are in the
-archive on Zenodo (https://doi.org/10.5281/zenodo.22996003).
+language models that proposed the equations (`evaluation/forge/proposer.py`). Running the search itself needs access
+to those models and a cluster scheduler and is not covered by the scripts here; its records are in the archive on
+Zenodo (https://doi.org/10.5281/zenodo.22996003). `evaluation/forge_fixed` and `evaluation/forge_deploy`, also
+unchanged, let the evaluator run a compiled closure (a RAS model, its library and its coefficients) through the same
+cases, cache, convergence admission and scoring as the corrections, and built and checked those libraries on the
+cluster. Their paths `src/comparators/<folder>` are `closures/comparators/<folder>` here.
+
+## Tests
+
+The unit tests run without OpenFOAM simulations:
+
+```sh
+python3 -m pytest -q tests                                   # QCR2000, evaluation/forge_fixed and forge_deploy, use_comparator.py
+python3 -m pytest -q closures/comparators/sstrc_reference    # SST-RC reference and the output of its C++ kernel
+python3 -m pytest -q closures/comparators/earsm_reference    # EARSM reference
+```
+
+With OpenFOAM v2312, `./closures/comparators/Allwmake -test` builds the unit programs of the compiled closures,
+and `tests/comparators/earsm/check_earsm_unit.py`, `tests/comparators/autoturb/check_autoturb_source.py` and
+`closures/forgeTermFields/termfields_dict.py check` compare them with the independent implementations.
 
 ## Citation
 
-Please cite the paper when using the closures, the scripts or the case set (see also `CITATION.cff`). The code
-is archived on Zenodo at https://doi.org/10.5281/zenodo.22996126 (all versions; version 1.0, as submitted with
-the paper, is https://doi.org/10.5281/zenodo.22996127).
+Please cite the paper when using the closures, the scripts or the case set (see also `CITATION.cff`). The code is
+archived on Zenodo at https://doi.org/10.5281/zenodo.22996126 (all versions; version 1.0 is
+https://doi.org/10.5281/zenodo.22996127). Version 1.1 adds the compared closures, the term-field utility and the
+evaluation support for compiled closures ([CHANGELOG.md](CHANGELOG.md)). When using a compared closure, please cite
+its publication as well (`closures/comparators/README.md`).
 
 ```bibtex
 @article{charalampous2026forge,
@@ -178,8 +254,9 @@ the paper, is https://doi.org/10.5281/zenodo.22996127).
 
 ## License
 
-The code (`closures/`, `evaluation/`, `reproduce/`, `data/fetch_data.py`) is licensed under the GNU General Public
-License, version 3 or later ([LICENSE](LICENSE)), as is OpenFOAM, against which the library is built. The closure
-dictionaries, case definitions, expected values and checksums are licensed under CC BY 4.0
-([LICENSE-data](LICENSE-data)). The NASA grids and reference data are in the public domain in the United States;
+The code (`closures/`, `evaluation/`, `reproduce/`, `tests/`, `data/fetch_data.py`) is licensed under the GNU
+General Public License, version 3 or later ([LICENSE](LICENSE)), as is OpenFOAM, against which the libraries are
+built. The closure dictionaries, case definitions, expected values, checksums, and the states and targets of the
+reference implementations in `closures/comparators` are licensed under CC BY 4.0 ([LICENSE-data](LICENSE-data));
+the targets read from Fig. 1 of Smirnov and Menter (2009) are values of that publication. The NASA grids and reference data are in the public domain in the United States;
 the other reference data remain under the terms of their distributors ([data/README.md](data/README.md)).

@@ -1,0 +1,27 @@
+{
+  "name": "qcr2000",
+  "description": "QCR2000 of Spalart (2000), compared in Sec. V: the quadratic constitutive relation applied to the SST stress with C_cr1 = 0.3, written exactly as the T2 coefficient function of kOmegaSSTBasis (Appendix A 6).",
+  "origin": {
+    "campaign": "forge-v3-verify-008-comparators",
+    "label": "QCR",
+    "record_name": "qcr2000_spalart_2000",
+    "model_fingerprint": "633da9bb8f966f54ee0b8df0dc536f1fe8f4bcde6d1f1d67dee2b77bacf17098",
+    "citation": "Spalart, Int. J. Heat Fluid Flow 21, 252 (2000)",
+    "verification": "closures/comparators/qcr2000/qcr2000_comparator.py"
+  },
+  "spec": {
+    "bdelta": [
+      [
+        "T2",
+        "c0*0.09*(1000000000000*((1000000000000*(PoE+max(0,(1000000000000*(1-phiDkPk))/(1000000000000*phiDkPk)-10)))/(1000000000000*I1)))/(1000000000000*sqrt(I1-I2))"
+      ]
+    ],
+    "constants": [
+      0.3
+    ],
+    "gmax": 1e+30,
+    "name": "qcr2000_spalart_2000",
+    "r_max_factor": 5.0,
+    "rsource": []
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "bases": {
+    "F01": {
+      "config": "config/verify_campaign.json",
+      "label": "F01"
+    },
+    "R1": {
+      "config": "config/verify_campaign_r1.json",
+      "label": "R1"
+    },
+    "V2": {
+      "config": "config/verify_campaign.json",
+      "label": "V2"
+    }
+  },
+  "models": [
+    {
+      "citation": "autoturb2025",
+      "commit": "e5cbb7c4b0d16ddae7392e8e2a0ce82d569f167f",
+      "fixed": {
+        "coeffs": {
+          "alpha1Const": 0.5,
+          "alpha1Sin": 1.0,
+          "alpha2": 1.0,
+          "rampIterations": 200.0
+        },
+        "library": "libkOmegaSSTAutoTurb.so",
+        "ras_model": "kOmegaSSTAutoTurb",
+        "source_dir": "src/comparators/autoturb",
+        "source_sha256": "96445de702d331977149fd2942ff8da08dac462735c1cbff8b59c53bfe975e03"
+      },
+      "frame_rotation": "ignored",
+      "handoff": {
+        "path": "reports/overnight_20261001/handoff/comparator_autoturb.json",
+        "sha256": "f7c9a26d9bff30680f1365f7b22d62ec9b5b1b7067fea98ef88e8a02f70b689c"
+      },
+      "label": "AutoTurb",
+      "name": "autoturb_zhang2025_model_llms",
+      "nonlinear_stress": false,
+      "source": "comparator",
+      "spec": null
+    },
+    {
+      "citation": "menter2012earsm",
+      "commit": "3b85f2a8781d529b7b833ceafb0b3d81ca34400f",
+      "fixed": {
+        "coeffs": {
+          "A1": 1.245,
+          "C1": 1.8,
+          "Ctau": 6.0,
+          "beta1": 0.075,
+          "beta2": 0.0828,
+          "betaStar": 0.09,
+          "c1": 10.0,
+          "includeT9": false,
+          "kappa": 0.41,
+          "rampIterations": 200.0,
+          "sigmaK1": 0.5,
+          "sigmaK2": 1.0,
+          "sigmaOmega1": 0.5,
+          "sigmaOmega2": 0.856
+        },
+        "library": "libkOmegaEARSM.so",
+        "ras_model": "kOmegaEARSM",
+        "source_dir": "src/comparators/earsm",
+        "source_sha256": "2437946f62b0f9499f02eb0fc35669803ebaa12beffbf0ace02787a54dfa2ddc"
+      },
+      "frame_rotation": "ignored",
+      "handoff": {
+        "path": "reports/overnight_20261001/handoff/comparator_earsm.json",
+        "sha256": "744335ad375b54fc7fc55738cd1347344d9917f236c3bcc939a55ae21bf2b746"
+      },
+      "label": "EARSM",
+      "name": "bsl_earsm_menter_2012",
+      "nonlinear_stress": true,
+      "source": "comparator",
+      "spec": null
+    },
+    {
+      "citation": "spalart2000",
+      "commit": "04f18aa41eb744073e97cfcc77cf68ad8c8f23b7",
+      "frame_rotation": "absolute",
+      "handoff": {
+        "path": "reports/overnight_20261001/handoff/comparator_qcr.json",
+        "sha256": "43336d84618e8295c649bc918b7f4d5058263dd9b1941fc8b3acf448e6d456fe"
+      },
+      "label": "QCR",
+      "name": "qcr2000_spalart_2000",
+      "nonlinear_stress": true,
+      "source": "comparator",
+      "spec": {
+        "bdelta": [
+          [
+            "T2",
+            "c0*0.09*(1000000000000*((1000000000000*(PoE+max(0,(1000000000000*(1-phiDkPk))/(1000000000000*phiDkPk)-10)))/(1000000000000*I1)))/(1000000000000*sqrt(I1-I2))"
+          ]
+        ],
+        "constants": [
+          0.3
+        ],
+        "gmax": 1e+30,
+        "name": "qcr2000_spalart_2000",
+        "r_max_factor": 5.0,
+        "rsource": []
+      }
+    },
+    {
+      "citation": "smirnov2009",
+      "commit": "a6581482ea10ee5b580169c86c655b9a23105f7d",
+      "fixed": {
+        "coeffs": {
+          "Cscale": 1.0,
+          "cr1": 1.0,
+          "cr2": 2.0,
+          "cr3": 1.0,
+          "fr1Max": 1.25,
+          "rampIterations": 200.0,
+          "rotationCurvatureCorrection": true
+        },
+        "library": "libkOmegaSSTRC.so",
+        "ras_model": "kOmegaSSTRC",
+        "source_dir": "src/comparators/sstrc",
+        "source_sha256": "93ac7cc32d3ffcaa6cf817d586124fb3632b99b408f359504fc0db99e2d7a2e2"
+      },
+      "frame_rotation": "absolute",
+      "handoff": {
+        "path": "reports/overnight_20261001/handoff/comparator_sstrc.json",
+        "sha256": "17ef682c2032ba2268498dee714a52f67cc63ffcfcf374e7ce0e41426c077b63"
+      },
+      "label": "SSTRC",
+      "name": "sst_rc_smirnov_menter_2009",
+      "nonlinear_stress": false,
+      "source": "comparator",
+      "spec": null
+    }
+  ],
+  "purpose": "comparator models for freeze-comparators",
+  "schema_version": 1,
+  "written_utc": "2026-10-01T23:16:45.224825+00:00"
+}

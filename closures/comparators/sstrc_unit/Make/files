@@ -1,0 +1,3 @@
+sstrcUnit.C
+
+EXE = $(FOAM_USER_APPBIN)/sstrcUnit

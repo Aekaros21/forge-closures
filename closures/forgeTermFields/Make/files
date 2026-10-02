@@ -1,0 +1,4 @@
+exprSources.C
+forgeTermFields.C
+
+EXE = $(FOAM_USER_APPBIN)/forgeTermFields

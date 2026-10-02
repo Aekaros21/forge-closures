@@ -1,0 +1,4 @@
+EXE_INC = \
+    -I../sstrc
+
+EXE_LIBS =

@@ -30,5 +30,9 @@
   "shielded_T1": {
     "description": "Shielded variant T1 (Sec. III B3, not adopted): rotation-limited correction with the activation threshold of the excess-production term raised by 1",
     "turbulenceProperties_sha256": "dcfd1b463c749a0024ac2e139fcab4ef0080d76873708b3cbeeddc22e4263219"
+  },
+  "qcr2000": {
+    "description": "QCR2000 (Spalart 2000; Sec. V, compared closure): quadratic constitutive relation on the SST stress, C_cr1 = 0.3.",
+    "turbulenceProperties_sha256": "d9ffe17d046f7d10693eb70cab11cc0f2c1ec23fc699a3d26032f27b0e3aa45e"
   }
 }

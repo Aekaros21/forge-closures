@@ -7,6 +7,8 @@ authors:
     given-names: Charalampos
     affiliation: "Department of Mechanical Engineering, Imperial College London"
 doi: 10.5281/zenodo.22996126
+version: "1.1.0"
+date-released: "2026-10-02"
 repository-code: "https://github.com/Aekaros21/forge-closures"
 license:
   - GPL-3.0-or-later

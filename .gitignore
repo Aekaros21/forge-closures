@@ -2,8 +2,9 @@
 runs/
 build/
 # OpenFOAM build products
-closures/kOmegaSSTBasis/Make/linux64*/
+Make/linux64*/
 lnInclude/
+closures/forgeTermFields/bin/
 # data downloaded by data/fetch_data.py or placed by hand (not redistributable here)
 data/mcconkey/
 data/assets/references/duct/
@@ -17,3 +18,4 @@ data/assets/meshes/
 __pycache__/
 *.pyc
 .venv/
+.pytest_cache/

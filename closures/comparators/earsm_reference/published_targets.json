@@ -1,0 +1,172 @@
+{
+  "schema": "earsm_published_targets/1",
+  "written_by": "independent reference, 1-2 Oct 2026",
+  "model": "BSL-EARSM: Wallin-Johansson stress-strain relation in the BSL k-omega model, A1 = 1.245, beta9 = 0",
+  "sources": {
+    "M12": "Menter, Garbaruk and Egorov 2012, Progress in Flight Physics 3:89-104, doi:10.1051/eucass/201203089; archive/paper_pof/literature/pdfs/menter2012earsm.pdf; printed page numbers",
+    "M09": "Menter, Garbaruk and Egorov 2009, 3rd EUCASS, Versailles; archive/paper_pof/literature/pdfs/menter2009earsm.pdf; PDF page numbers (no printed numbers)",
+    "TMR": "NASA TMR 2DZP flat plate, cases/tmr/reference/FlatPlate/FlatPlate_validation_cf_incomp_results_sstv.dat",
+    "reference_py": "src/comparators/earsm_reference/reference.py (closed forms derived from M12 eqs. 2-8; see docstrings)"
+  },
+  "digitization": "Figure values were read from the vector PDF figures rendered at 500-800 dpi, with axis ticks located in pixels (scratch scripts, not committed); uncertainty quoted per value is the line half-width plus one pixel.",
+  "preflight_gates": [
+    {
+      "id": "square_duct_bisector_secondary_velocity",
+      "source": "M12 Fig. 3b, p. 97 (same figure: M09 Fig. 3, PDF p. 7); text M12 pp. 96-97",
+      "published_conditions": "fully developed square duct, DNS conditions of Huser and Biringen (1993); Reynolds number based on mean friction velocity and half-width printed as 6000 (M12 p. 96); one quadrant, symmetry at y = z = h, streamwise periodic, 51 x 51 cross-plane grid with y+, z+ <= 0.3 (M12 p. 96)",
+      "quantity": "minimum over the corner bisector y = z of v/U_bulk, v the velocity normal to the lower wall (negative = towards the wall, i.e. into the corner)",
+      "published_value": -0.0087,
+      "published_location_y_over_2h": 0.12,
+      "digitization_uncertainty": {
+        "value": 0.0002,
+        "location": 0.02
+      },
+      "same_figure_other_curves": {
+        "S-BSL-EARSM": "coincides with BSL-EARSM within line width",
+        "SST": "v identically 0 (no secondary flow, M12 p. 97)",
+        "DNS_markers": {
+          "y_over_2h": [
+            0.05,
+            0.1,
+            0.2
+          ],
+          "v_over_Ub": [
+            -0.0086,
+            -0.0129,
+            -0.0066
+          ]
+        }
+      },
+      "companion_value_fig3a": {
+        "quantity": "u/U_bulk on the bisector",
+        "y_over_2h": [
+          0.05,
+          0.1
+        ],
+        "BSL_EARSM": [
+          0.69,
+          0.91
+        ],
+        "SST": [
+          0.54,
+          0.81
+        ],
+        "uncertainty": 0.01
+      },
+      "acceptance_at_published_conditions": {
+        "value_min": -0.0105,
+        "value_max": -0.007,
+        "location_min": 0.08,
+        "location_max": 0.18,
+        "tolerance_note": "20 percent on the magnitude (grid, code and digitization), 0.05 on the location"
+      },
+      "acceptance_at_repo_ducts": {
+        "applies_to": "the repository's square ducts (Re_b 1100-3500, lower than the published case); the published magnitude is not transferable, so this is a sign-and-order gate",
+        "require": "v < 0 along the bisector over 0.03 < y/(2h) < 0.4 (flow into the corner), SST |v|/U_b < 1e-6, EARSM peak |v|/U_b between 0.004 and 0.02, peak location 0.05 <= y/(2h) <= 0.25",
+        "status": "extrapolated from the published case; flag, do not over-interpret"
+      }
+    },
+    {
+      "id": "log_layer_equilibrium",
+      "source": "M12 p. 93 (A1 = 1.245 'allows matching the logarithmic wall layer without changing the EARSM stress-strain relationship'); M12 pp. 94-95 (equilibrium relation -uv = sqrt(cmu) k, cmu = 0.09); M12 Fig. 1b, p. 95 (u+ follows the Wieghardt-Tillmann log law)",
+      "quantities": {
+        "minus_uv_over_k_in_log_layer": {
+          "published_equilibrium": 0.3,
+          "model_closed_form": 0.305553,
+          "accept_min": 0.29,
+          "accept_max": 0.32
+        },
+        "cmu_eff_at_P_over_eps_1": {
+          "published_equilibrium": 0.09,
+          "model_closed_form": 0.093363,
+          "accept_min": 0.085,
+          "accept_max": 0.1,
+          "definition": "nut_eff/(k tau) = -beta1/2 with tau = 1/(0.09 omega)",
+          "sensitivity": "cmu_eff depends on the local P/eps: 0.0975 at P/eps = 0.95, 0.0934 at 1.00, 0.0895 at 1.05 (closed form); -uv/k does not (0.3044, 0.3056, 0.3066), so -uv/k is the gate and cmu_eff is supporting"
+        },
+        "kappa_from_log_fit": {
+          "published": 0.41,
+          "model_closed_form": 0.4214,
+          "accept_min": 0.39,
+          "accept_max": 0.435,
+          "fit_range": "u+ against ln y+ over 50 <= y+ <= 0.15 delta+ (TMR plate at x = 0.97 or a channel)",
+          "derivation": "reference.log_layer_kappa: kappa = 0.41 (c/0.3)^(3/2), c = -uv/k"
+        },
+        "normal_anisotropy_log_layer": {
+          "a11": 0.251973,
+          "a22": -0.251973,
+          "a33": 0.0,
+          "accept_abs": 0.03,
+          "note": "closed form at P/eps = 1 (simple shear); a33 = 0 and a11 = -a22 are properties of the printed model (beta3 ~ IV = 0 in 2D), not of the data"
+        }
+      },
+      "closed_form_state": {
+        "P_over_eps": 1.0,
+        "N": 3.968675,
+        "IIS": 5.35545,
+        "S_tau": 3.272751,
+        "a12": -0.305553
+      },
+      "status": "gate on -uv/k (insensitive to the local P/eps); cmu_eff, normal anisotropy and the kappa fit as supporting evidence",
+      "procedure": "TMR plate at x = 0.97 (or a channel): take the cells with 50 <= y+ <= 0.1 delta+; per cell form R = (2/3) k I - nut twoSymm(grad U) + nonlinearStress; gate: median of -R_xy/k in [0.29, 0.32]; supporting: median nut*0.09*omega/k (= cmu_eff, limiter inactive there) in [0.085, 0.100], median a_xx = R_xx/k - 2/3 within 0.03 of 0.252, a_zz within 0.03 of 0; in-situ consistency: compare_cpp-style recomputation of nut and nonlinearStress from the cell's grad U, k, omega, nu with reference.earsm_state (relative difference < 1e-6, written-precision limited)"
+    }
+  ],
+  "recorded_not_gated": {
+    "tmr_flat_plate_cf": {
+      "station": "x = 0.970084071 (Re_x = 4.85e6)",
+      "sst_reference_cf": {
+        "value": 0.0027174,
+        "source": "TMR FUN3D incompressible SST/SST-V, finest grid (FlatPlate_validation_cf_incomp_results_sstv.dat)"
+      },
+      "expected_earsm_over_sst_minus_1": {
+        "central": 0.024,
+        "range": [
+          0.01,
+          0.035
+        ]
+      },
+      "evidence": [
+        "M12 Fig. 1a, p. 95: the BSL-EARSM and S-BSL-EARSM curves lie above the SST curve by 6.9e-5 in cf (+2.4 percent) at Re_x = 3.5e6 and 4.0e6 and by +2.4 percent at 6e6 (pixel centres of the separated line runs; +-0.7 percent from line width); curves merge at the plot resolution near Re_x = 1e7",
+        "analysis: log-layer -uv/k = 0.3056 > 0.3 gives kappa_eff = 0.421 > 0.41 (reference.log_layer_kappa), a lower log-law velocity at the edge and hence a higher cf, consistent in sign with the figure"
+      ],
+      "context": "the protection allowance on the plate wall friction in the paper's rule is 2.1 percent (FORGE_PoF/evidence/comparator_results.json, protected/plate_friction/allowance_percent); a faithful BSL-EARSM is expected to sit near or just above that allowance on the plate. M12's SST is the ANSYS CFX implementation, not OpenFOAM v2312."
+    },
+    "homogeneous_shear_equilibrium": {
+      "source": "reference.homogeneous_shear_pk_over_eps and shear_equilibrium_closed_form (M12 p. 93 omega equation without diffusion; M12 eqs. 2-8)",
+      "outer_branch_F1_0": {
+        "P_over_eps": 2.089225,
+        "N": 6.33085,
+        "S_tau": 6.724592,
+        "a11": 0.330007,
+        "a22": -0.330007,
+        "a33": 0.0,
+        "a12": -0.310684,
+        "cmu_eff": 0.046201
+      },
+      "inner_branch_F1_1": {
+        "P_over_eps": 1.506478,
+        "N": 5.06706,
+        "S_tau": 4.844953,
+        "a11": 0.297308,
+        "a12": -0.310938,
+        "cmu_eff": 0.064178
+      },
+      "note": "M12 and M09 tabulate no homogeneous-shear anisotropy; these are the printed model's values"
+    },
+    "weak_strain_limit": {
+      "N": 1.8,
+      "cmu_eff_k_tau": 0.345833,
+      "formula": "A1/(2 C1')",
+      "note": "linear eddy-viscosity model in the free stream; with tau = 1/(0.09 omega) this is nut = 3.84 k/omega, so free-stream nut is about 3.8 times the SST value k/omega for the same k and omega"
+    }
+  },
+  "unit_comparison_tolerances": {
+    "N_rel": 1e-09,
+    "beta_rel": 1e-09,
+    "anisotropy_abs_over_max1": 1e-09,
+    "nut_rel": 1e-09,
+    "nonlinear_stress_abs_over_k": 1e-09,
+    "tau_rel": 1e-12,
+    "note": "1e-9 covers the printed cbrt(P1 - sqrt P2) cancellation (up to 2e-11 relative in N) and double-precision field arithmetic"
+  }
+}
